@@ -110,7 +110,7 @@ IDS_PUBLICOS = producto1-crear-liberar \
 		 	   clientesSucursalesLDE5-repetidos \
 			   clientesSucursalesLDE6-combinado  \
 
-IDS_PRIVADOS = 
+IDS_PRIVADOS =
 
 CASOS = $(IDS_PUBLICOS) $(IDS_PRIVADOS)
 

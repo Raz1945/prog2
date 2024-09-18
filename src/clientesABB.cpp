@@ -6,13 +6,16 @@ struct rep_clientesABB {
     rep_clientesABB *der;
 };
 
+// Función para crear un nuevo grupo vacío.
+// Devuelve un nuevo árbol binario vacío.
 TClientesABB crearTClientesABBVacio() {
     return NULL;
 }
 
+// Función para insertar un Cliente en el árbol binario, por id.
+// Nota: El orden de la insercion se da por el numero de id del cliente.
+// PRE: El Cliente no está en el grupo.
 void insertarTClienteTClientesABB(TClientesABB &clientesABB, TCliente cliente) {
-    // Nota: El orden de la insercion se da por el numero de id del cliente.
-
     // Si el arbol esta vacio, se crea un nodo
     if (clientesABB == NULL) {
         TClientesABB nuevoNodo = new rep_clientesABB;
@@ -40,17 +43,29 @@ void imprimirTClientesABB(TClientesABB clientesABB) {
     }
 }
 
-// Liberar la memoria de todo un grupo. [Post-Orden]
-void liberarTClientesABB(TClientesABB &clientesABB) {
+// Liberar la memoria del cliente y del nodo
+// Función para liberar la memoria asignada a un grupo.
+void liberarNodo(TClientesABB &clientesABB) {
+    if (clientesABB != NULL) {
+        liberarTCliente(clientesABB->cliente);
+        liberarNodo(clientesABB->izq); 
+        liberarNodo(clientesABB->der); 
+        delete clientesABB;
+        clientesABB = NULL; 
+    }
+}
+// Función para liberar la memoria asignada a un grupo. [Post-Orden]
+void liberarTClientesABB(TClientesABB &clientesABB) {    
     if (clientesABB != NULL) {
         liberarTClientesABB(clientesABB->izq);
         liberarTClientesABB(clientesABB->der);
-        liberarTCliente(clientesABB->cliente);
-        delete clientesABB;
-        clientesABB = NULL;
+
+        liberarNodo(clientesABB);
     }
 }
 
+// Función que determina si un cliente está en el árbol binario.
+// Devuelve true si el cliente está en el grupo, false en caso contrario.
 bool existeTClienteTClientesABB(TClientesABB clientesABB, int idCliente) {
     if (clientesABB == NULL) {
         return false;
@@ -67,23 +82,27 @@ bool existeTClienteTClientesABB(TClientesABB clientesABB, int idCliente) {
     }
 }
 
+// Función para obtener un cliente del árbol binario.
+// PRE: el cliente está en el grupo
 TCliente obtenerTClienteTClientesABB(TClientesABB clientesABB, int idCliente) {
-    if (clientesABB == NULL) {
-        return NULL;  
-    } else if (idCliente == idTCliente(clientesABB->cliente)) {
-        return clientesABB->cliente;  
-    } else if (idCliente < idTCliente(clientesABB->cliente)) {
-        return obtenerTClienteTClientesABB(clientesABB->izq, idCliente);
-    } else {
-        return obtenerTClienteTClientesABB(clientesABB->der, idCliente);
+    if (clientesABB != NULL) {
+        if (idCliente == idTCliente(clientesABB->cliente)) {
+            return clientesABB->cliente;  
+        } else if (idCliente < idTCliente(clientesABB->cliente)) {
+            return obtenerTClienteTClientesABB(clientesABB->izq, idCliente);
+        } else {
+            return obtenerTClienteTClientesABB(clientesABB->der, idCliente);
+        }
     }
+    return NULL;  
 }
 
-// Retorna el mas grande de ambos
+// Funcion para obtener el mayor entre dos numeros
 nat max(nat a, nat b) {
     return (a > b) ? a : b;
 }
 
+// Funcion para obtener la altura del árbol binario.
 nat alturaTClientesABB(TClientesABB clientesABB) {
     if (clientesABB == NULL) {
         return 0; 
@@ -92,30 +111,120 @@ nat alturaTClientesABB(TClientesABB clientesABB) {
     }
 }
 
-// todo VER
+// Función para obtener el cliente con el id más grande del árbol binario.
 // PRE: el árbol binario no es vacío
 TCliente maxIdTClienteTClientesABB(TClientesABB clientesABB) {
-    if (clientesABB == NULL) { 
-        return NULL;
-    } else if (clientesABB->der == NULL) { // Si no hay mas nodos a la derecha, entonces es el nodo con el id mas grande
+    if (clientesABB->der == NULL) { 
         return clientesABB->cliente;
-    } else { // Si hay un subarbol derecho, seguira buscando en la misma direccion
+    }
+    // Si hay un subarbol derecho, seguira buscando en la misma direccion
+    else {
         return maxIdTClienteTClientesABB(clientesABB->der);
     }
 }
 
-// todo HACER
+// Función para eliminar un cliente del árbol binario.
+// En caso de que el nodo a remover tenga ambos subárboles no vacíos, se reemplaza por el cliente con el id más grande del subárbol izquierdo. 
+// PRE: El cliente está en el grupo -> idCliente esta en clientesABB
 void removerTClienteTClientesABB(TClientesABB &clientesABB, int idCliente) {
+    if (clientesABB != NULL) {
+        if (idCliente < idTCliente(clientesABB->cliente)) {
+            removerTClienteTClientesABB(clientesABB->izq, idCliente);
+        } else if (idCliente > idTCliente(clientesABB->cliente)) {
+            removerTClienteTClientesABB(clientesABB->der, idCliente);
+        } else {
+            // Nodo encontrado
+            
+            // Caso 1 - Nodo sin hijos (hoja)
+            if (clientesABB->izq == NULL && clientesABB->der == NULL) {
+                liberarTCliente(clientesABB->cliente); 
+                delete clientesABB; 
+                clientesABB = NULL;
+            } 
+            // Caso 2 - Nodo con solo hijo (derecho)
+            else if (clientesABB->izq == NULL) {
+                TClientesABB temp = clientesABB;
+                clientesABB = clientesABB->der; 
+                liberarTCliente(temp->cliente); 
+                delete temp; // Eliminar el nodo
+            }
+            // Caso 3 - Nodo con solo hijo (izquierdo)
+            else if (clientesABB->der == NULL) {
+                TClientesABB temp = clientesABB;
+                clientesABB = clientesABB->izq; 
+                liberarTCliente(temp->cliente); 
+                delete temp;
+            }
+            // Caso 4 - Nodo con dos hijos
+            else {
+                TCliente maxCliente = maxIdTClienteTClientesABB(clientesABB->izq);  // Obtener el cliente con el ID más grande del subárbol izquierdo
+                clientesABB->cliente = maxCliente; // Reemplazar el cliente actual
+                removerTClienteTClientesABB(clientesABB->izq, idTCliente(maxCliente));  // Remover el nodo duplicado en el subárbol izquierdo
+            }
+        }
+    }
 }
 
+
+// Función para obtener la cantidad de clientes en el árbol binario.
 int cantidadClientesTClientesABB(TClientesABB clientesABB) {
-    return 0;
+    if (clientesABB == NULL){
+        return 0;
+    } else {
+        return 1 + cantidadClientesTClientesABB(clientesABB->izq) + cantidadClientesTClientesABB(clientesABB->der);
+    }
 }
 
+// Sumar la edad de todos los clientes en el ABB
+float sumatoriaEdadTClientesABB(TClientesABB clientesABB) {
+    if (clientesABB == NULL) {
+        return 0.0;
+    } else {
+        // Suma la edad del cliente actual + las edades de los lados izquierdo y derecho
+        return edadTCliente(clientesABB->cliente) + 
+               sumatoriaEdadTClientesABB(clientesABB->izq) + 
+               sumatoriaEdadTClientesABB(clientesABB->der);
+    }
+}
+
+// Funcion para obtener la edad promedio de los clientes. Si no hay clientes en el grupo devuelve 0.
 float edadPromedioTClientesABB(TClientesABB clientesABB) {
-    return 0.;
+    int cantidadClientes = cantidadClientesTClientesABB(clientesABB);
+
+    if (cantidadClientes == 0) {
+        return 0.0;
+    } else {
+        return (sumatoriaEdadTClientesABB(clientesABB) / cantidadClientes);
+    }
 }
 
-TCliente obtenerNesimoClienteTClientesABB(TClientesABB clientesABB, int n) {
+// Recorre enorden el arbol [In-Orden] 
+TCliente inOrden(TClientesABB nodo, int &index, int n) {
+
+    if (nodo != NULL) {
+        // Recorre el subarbol izquierdo
+        TCliente resultado = inOrden(nodo->izq, index, n);
+        if (index == n) return resultado; 
+
+        // Aumenta el contador luego de pasar por el nodo izquierdo
+        index++;
+
+        // Verifica si se encontro en el nodo actual
+        if (index == n) {
+            return nodo->cliente;
+        }
+
+        // En caso de no encontrarlo en el nodo actual, recorre el subarbol derecho
+        resultado = inOrden(nodo->der, index, n);
+        if (index == n) return resultado;
+    }
     return NULL;
+}
+
+// Función para obtener el Nesimo cliente del grupo. El órden de los clientes se considera por orden de 'id', con base 1.
+// PRE: cantidadClientesTClientesABB(grupo) >= n
+// PRE: n > 0
+TCliente obtenerNesimoClienteTClientesABB(TClientesABB clientesABB, int n) {
+    int index = 0; // contador de posicion
+    return inOrden(clientesABB, index, n);
 }

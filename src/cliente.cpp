@@ -8,7 +8,7 @@ struct rep_cliente {
     rep_cliente *sig;
 };
 
-
+// Función que crea un elemento de tipo TCliente con los valores pasados por parámetro
 TCliente crearTCliente(int id, const char nombre[MAX_NOMBRE], const char apellido[MAX_APELLIDO], int edad){
     TCliente nuevoCliente = new rep_cliente;
 
@@ -22,6 +22,7 @@ TCliente crearTCliente(int id, const char nombre[MAX_NOMBRE], const char apellid
     return nuevoCliente;
 }
 
+// Función que imprime la información de UN cliente
 void imprimirTCliente(TCliente cliente){
     if (cliente != NULL){
         printf("Cliente %s %s\n", cliente->nombre, cliente->apellido);
@@ -30,27 +31,33 @@ void imprimirTCliente(TCliente cliente){
     }
 }
 
+// Función que libera la memoria asignada a un cliente
 void liberarTCliente(TCliente &cliente){
     delete cliente;
     cliente = NULL;        
 }
 
+// Función que retorna el nombre del cliente
 void nombreTCliente(TCliente cliente, char nombre[MAX_NOMBRE]){
     strcpy(nombre, cliente->nombre);
 }
 
+// Función que retorna el apellido del cliente
 void apellidoTCliente(TCliente cliente, char apellido[MAX_APELLIDO]){
     strcpy(apellido, cliente->apellido);
 }
 
+// Función que retorna el id del cliente
 int idTCliente(TCliente cliente){
     return cliente->id;
 }
 
+// Función que retorna la edad del cliente
 int edadTCliente(TCliente cliente){
     return cliente->edad;
 }
 
+// Función que copia un cliente. La copia no comparte memoria con el cliente pasado por parámetro.
 TCliente copiarTCliente(TCliente cliente){
     if (cliente == NULL){
         return NULL;
