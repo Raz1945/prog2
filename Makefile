@@ -110,7 +110,10 @@ IDS_PUBLICOS = producto1-crear-liberar \
 		 	   clientesSucursalesLDE5-repetidos \
 			   clientesSucursalesLDE6-combinado  \
 
-IDS_PRIVADOS =
+IDS_PRIVADOS = privado1 \
+			   privado2 \
+			   privado3 \
+			   privado4 \
 
 CASOS = $(IDS_PUBLICOS) $(IDS_PRIVADOS)
 
@@ -226,7 +229,7 @@ check-syntax:
 	gcc -o nul -S ${CHK_SOURCES}
 
 LIB = tarea.a
-$(LIB):	$(ODIR)/utils.o $(ODIR)/$(PRINCIPAL).o
+$(LIB):	$(ODIR)/fecha.o $(ODIR)/utils.o $(ODIR)/$(PRINCIPAL).o
 	ar -qc $@ $^	
 
 
