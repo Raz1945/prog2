@@ -25,8 +25,8 @@ TClientesSucursalesLDE crearTClientesSucursalesLDEVacia() {
     return nuevaLista;
 }
 
-// Función para insertar ordenadamente una coleccion de clientesABB en la lista de sucursales según la edad promedio (menor a mayor). 
-//? Si ya existe uno o más clientesABB con la misma edad promedio, el nuevo es agregado a continuación de estos.
+// Función para insertar ordenadamente una colección de clientesABB en la lista de sucursales según la edad promedio (menor a mayor).
+// Si ya existe uno o más clientesABB con la misma edad promedio, el nuevo es agregado a continuación de estos.
 void insertarClientesABBTClientesSucursalesLDE(TClientesSucursalesLDE clientesSucursalesLDE, TClientesABB clientesABB, int idSucursal) {
     if (clientesSucursalesLDE != NULL) {
         // Crear un nuevo nodo
@@ -36,12 +36,12 @@ void insertarClientesABBTClientesSucursalesLDE(TClientesSucursalesLDE clientesSu
         nuevoNodo->ant = NULL;
         nuevoNodo->sig = NULL;
 
-        // Si la lista esta vacia
+        // Si la lista está vacía
         if (clientesSucursalesLDE->inicial == NULL) {
             clientesSucursalesLDE->inicial = nuevoNodo;
             clientesSucursalesLDE->final = nuevoNodo;
         }
-        // La lista no esta vacia hay tres casos:
+        // La lista no está vacía, hay tres casos:
         else {
             // Caso 1: Insertar al inicio de la lista
             if (edadPromedioTClientesABB(clientesABB) < edadPromedioTClientesABB(clientesSucursalesLDE->inicial->clientesABB)) {
@@ -59,24 +59,33 @@ void insertarClientesABBTClientesSucursalesLDE(TClientesSucursalesLDE clientesSu
             // Caso 3: Insertar en "el medio" de la lista
             else {
                 nodoLDE actual = clientesSucursalesLDE->inicial;
-                // Recorre los punteros hasta llegar a la posicion donde se inserta
+
+                // Recorre los punteros hasta encontrar el último nodo con la misma edad promedio
                 while (actual != NULL && edadPromedioTClientesABB(clientesABB) > edadPromedioTClientesABB(actual->clientesABB)) {
                     actual = actual->sig;
                 }
+                // Si encuentra nodos con la misma edad, avanza hasta el último de ellos
+                while (actual != NULL && edadPromedioTClientesABB(clientesABB) == edadPromedioTClientesABB(actual->clientesABB)) {
+                    actual = actual->sig;
+                }
 
+                // Insertar el nuevo nodo antes de 'actual' (que tiene mayor edad promedio)
                 if (actual != NULL) {
                     nuevoNodo->sig = actual;
                     nuevoNodo->ant = actual->ant;
 
-                    // Si el nodo actual tiene un anterior
                     if (actual->ant != NULL) {
                         actual->ant->sig = nuevoNodo;
                     } else {
-                        // El nuevo nodo se convierte en el primero
                         clientesSucursalesLDE->inicial = nuevoNodo;
                     }
 
-                    actual->ant = nuevoNodo;  // El anterior del nodo actual es el nuevo nodo
+                    actual->ant = nuevoNodo;
+                } else {
+                    // Si no hay nodos posteriores, se inserta al final
+                    nuevoNodo->ant = clientesSucursalesLDE->final;
+                    clientesSucursalesLDE->final->sig = nuevoNodo;
+                    clientesSucursalesLDE->final = nuevoNodo;
                 }
             }
         }
@@ -115,9 +124,14 @@ void imprimirTClientesSucursalesLDE(TClientesSucursalesLDE clientesSucursalesLDE
     if (clientesSucursalesLDE != NULL) {
         nodoLDE actual = clientesSucursalesLDE->inicial;
         printf("clientesSucursalesLDE de grupos:\n");
+
         while (actual != NULL) {
             printf("Grupo con edad promedio %.2f:\n", edadPromedioTClientesABB(actual->clientesABB));
-            imprimirTClientesABB(actual->clientesABB);
+
+            if (actual->clientesABB != NULL) {
+                imprimirTClientesABB(actual->clientesABB);
+            }
+            
             actual = actual->sig;
         }
     }
@@ -129,9 +143,14 @@ void imprimirInvertidoTClientesSucursalesLDE(TClientesSucursalesLDE clientesSucu
         nodoLDE actual = clientesSucursalesLDE->final;
         
         printf("clientesSucursalesLDE de grupos:\n");
+
         while (actual != NULL) {
             printf("Grupo con edad promedio %.2f:\n", edadPromedioTClientesABB(actual->clientesABB));
-            imprimirTClientesABB(actual->clientesABB);
+
+            if (actual->clientesABB != NULL) {
+                imprimirTClientesABB(actual->clientesABB);
+            }
+
             actual = actual->ant;
         }
     }

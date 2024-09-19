@@ -48,8 +48,6 @@ void imprimirTClientesABB(TClientesABB clientesABB) {
 void liberarNodo(TClientesABB &clientesABB) {
     if (clientesABB != NULL) {
         liberarTCliente(clientesABB->cliente);
-        liberarNodo(clientesABB->izq); 
-        liberarNodo(clientesABB->der); 
         delete clientesABB;
         clientesABB = NULL; 
     }
@@ -124,47 +122,50 @@ TCliente maxIdTClienteTClientesABB(TClientesABB clientesABB) {
 }
 
 // Función para eliminar un cliente del árbol binario.
-// En caso de que el nodo a remover tenga ambos subárboles no vacíos, se reemplaza por el cliente con el id más grande del subárbol izquierdo. 
+//* En caso de que el nodo a remover tenga ambos subárboles no vacíos, 
+//* se reemplaza por el cliente con el id más grande del subárbol izquierdo. 
 // PRE: El cliente está en el grupo -> idCliente esta en clientesABB
+// Función para eliminar un cliente del árbol binario.
 void removerTClienteTClientesABB(TClientesABB &clientesABB, int idCliente) {
-    if (clientesABB != NULL) {
-        if (idCliente < idTCliente(clientesABB->cliente)) {
-            removerTClienteTClientesABB(clientesABB->izq, idCliente);
-        } else if (idCliente > idTCliente(clientesABB->cliente)) {
-            removerTClienteTClientesABB(clientesABB->der, idCliente);
-        } else {
-            // Nodo encontrado
-            
-            // Caso 1 - Nodo sin hijos (hoja)
-            if (clientesABB->izq == NULL && clientesABB->der == NULL) {
-                liberarTCliente(clientesABB->cliente); 
-                delete clientesABB; 
-                clientesABB = NULL;
-            } 
-            // Caso 2 - Nodo con solo hijo (derecho)
-            else if (clientesABB->izq == NULL) {
-                TClientesABB temp = clientesABB;
-                clientesABB = clientesABB->der; 
-                liberarTCliente(temp->cliente); 
-                delete temp; // Eliminar el nodo
-            }
-            // Caso 3 - Nodo con solo hijo (izquierdo)
-            else if (clientesABB->der == NULL) {
-                TClientesABB temp = clientesABB;
-                clientesABB = clientesABB->izq; 
-                liberarTCliente(temp->cliente); 
-                delete temp;
-            }
-            // Caso 4 - Nodo con dos hijos
-            else {
-                TCliente maxCliente = maxIdTClienteTClientesABB(clientesABB->izq);  // Obtener el cliente con el ID más grande del subárbol izquierdo
-                clientesABB->cliente = maxCliente; // Reemplazar el cliente actual
-                removerTClienteTClientesABB(clientesABB->izq, idTCliente(maxCliente));  // Remover el nodo duplicado en el subárbol izquierdo
-            }
+    if (clientesABB == nullptr) {
+        return;
+    }
+
+    if (idCliente < idTCliente(clientesABB->cliente)) {
+        // Si el ID buscado es menor, busca en el subárbol izquierdo.
+        removerTClienteTClientesABB(clientesABB->izq, idCliente);
+    } else if (idCliente > idTCliente(clientesABB->cliente)) {
+        // Si el ID buscado es mayor, busca en el subárbol derecho.
+        removerTClienteTClientesABB(clientesABB->der, idCliente);
+    } else {
+        // Nodo encontrado
+
+        // Caso 1 - Nodo sin hijos (hoja)
+        if (clientesABB->izq == nullptr && clientesABB->der == nullptr) {
+            liberarNodo(clientesABB);
+        }
+        // Caso 2 - Nodo con solo hijo (derecho)
+        else if (clientesABB->izq == nullptr) {
+            TClientesABB temp = clientesABB;
+            clientesABB = clientesABB->der; 
+            liberarNodo(temp);
+        }
+        // Caso 3 - Nodo con solo hijo (izquierdo)
+        else if (clientesABB->der == nullptr) {
+            TClientesABB temp = clientesABB;
+            clientesABB = clientesABB->izq; 
+            liberarNodo(temp);
+        }
+        // Caso 4 - Nodo con dos hijos
+        else {
+            // Encontrar el cliente con el id mas grande del subarbol izquierdo.
+            TCliente temp = maxIdTClienteTClientesABB(clientesABB->izq);
+            clientesABB->cliente = temp; 
+            // Eliminar el nodo que contenia el cliente con el mayor ID en el subárbol izquierdo.
+            removerTClienteTClientesABB(clientesABB->izq, idTCliente(temp));
         }
     }
 }
-
 
 // Función para obtener la cantidad de clientes en el árbol binario.
 int cantidadClientesTClientesABB(TClientesABB clientesABB) {

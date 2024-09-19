@@ -2,4 +2,4 @@
 < 2> Se obtuvieron los clientes? 1 1 1 1 con ids respectivos 0 199999 66666 133333
 < Calculado correctamente en menos de 0.010s.
 ---
-> 2> ERROR, tiempo excedido: 0.016 > 0.010 
+> 2> ERROR, tiempo excedido: 0.031 > 0.010 

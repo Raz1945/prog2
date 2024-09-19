@@ -33,8 +33,10 @@ void imprimirTCliente(TCliente cliente){
 
 // Función que libera la memoria asignada a un cliente
 void liberarTCliente(TCliente &cliente){
-    delete cliente;
-    cliente = NULL;        
+    if (cliente != NULL) {
+        delete cliente;
+        cliente = NULL;    
+    }    
 }
 
 // Función que retorna el nombre del cliente
