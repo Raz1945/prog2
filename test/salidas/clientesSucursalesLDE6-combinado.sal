@@ -104,7 +104,10 @@ Edad: 32
 Cliente Artemio Ruiz
 Id: 6
 Edad: 30
-32> No hay cliente repetido porque no hay clientes en los clientesABB de sucursales.
+32> El cliente que aparece en la mayor cantidad de sucursales es:
+Cliente Valquiria Fernandez
+Id: 3
+Edad: 22
 33> SucursalesLDE de ClientesABB liberada
 34> La SucursalesLDE de clientes ha sido creado de forma exitosa.
 35> El clientesABB ha sido creado de forma exitosa.
@@ -182,6 +185,9 @@ Edad: 22
 Cliente Esmeralda Sanchez
 Id: 7
 Edad: 26
-62> No hay cliente repetido porque no hay clientes en los clientesABB de sucursales.
+62> El cliente que aparece en la mayor cantidad de sucursales es:
+Cliente Zenobia Rodriguez
+Id: 5
+Edad: 38
 63> SucursalesLDE de ClientesABB liberada
 64> Fin.

@@ -1,20 +1,42 @@
 #include "../include/clientesSucursalesLDE.h"
-struct AuxNodoLDE; 
 
+// Estructura para sucursales
+struct AuxNodoLDE; 
 typedef AuxNodoLDE *nodoLDE;
 
-// Representación del nodo auxiliar 
 struct AuxNodoLDE {
     int idSucursal;
     TClientesABB clientesABB;
-    nodoLDE ant; // anterior
-    nodoLDE sig; // siguiente
+    nodoLDE ant; 
+    nodoLDE sig; 
 };
 
+//Esta definido en el .h -> typedef struct rep_clientesSucursalesLDE *TClientesSucursalesLDE;
 struct rep_clientesSucursalesLDE {
     nodoLDE inicial;
     nodoLDE final;
 };
+
+// -----
+// Estructura para conteo de clientes
+struct AuxNodoConteo;
+typedef AuxNodoConteo *nodoConteo;
+
+struct AuxNodoConteo {
+    int idCliente;
+    int conteo;
+    nodoConteo ant;
+    nodoConteo sig;
+};
+
+typedef struct rep_nodoConteoLDE *TAuxNodoConteo;
+struct rep_nodoConteoLDE {
+    nodoConteo inicial;
+    nodoConteo final;
+};
+
+
+
 
 // Función para crear una nueva TClientesSucursalesLDE vacía
 // Devuelve una colección vacía.
@@ -287,16 +309,178 @@ TClientesABB removerNesimoClientesSucursalesLDE(TClientesSucursalesLDE clientesS
 	return NULL;
 }
 
+//  ------------------------------------------------------------------------------------------------- //
+// Crear una lista de conteo vacia
+TAuxNodoConteo crearListaConteoVacia() {
+    TAuxNodoConteo lista = new rep_nodoConteoLDE;
+    lista->inicial = NULL;
+    lista->final = NULL;
+    return lista;
+}
 
-// todo
+/// Insertar un nodo en la lista de conteo de manera ordenada por idCliente
+void insertarNodoConteo(TAuxNodoConteo lista, int idCliente, int conteo) {
+    nodoConteo nuevoNodo = new AuxNodoConteo; 
+    nuevoNodo->idCliente = idCliente;
+    nuevoNodo->conteo = conteo;
+    nuevoNodo->ant = NULL;
+    nuevoNodo->sig = NULL;
+
+    if (lista->inicial == NULL) {
+        // Si la lista esta vacia, el nuevo nodo se convierte en el inicio y el final de la lista
+        lista->inicial = nuevoNodo;
+        lista->final = nuevoNodo;
+    } else {
+        nodoConteo actual = lista->inicial;
+
+        // Buscar la posicion adecuada para insertar el nuevo nodo manteniendo el orden
+        while (actual != NULL && actual->idCliente < idCliente) {
+            actual = actual->sig;
+        }
+
+        // Insertar al final de la lista
+        if (actual == NULL) {
+            lista->final->sig = nuevoNodo;
+            nuevoNodo->ant = lista->final;
+            lista->final = nuevoNodo;
+        } 
+        // Insertar al inicio de la lista
+        else if (actual == lista->inicial) {
+            nuevoNodo->sig = lista->inicial;
+            lista->inicial->ant = nuevoNodo;
+            lista->inicial = nuevoNodo;
+        }
+        // Insertar en medio de la lista
+         else {
+            nuevoNodo->sig = actual;
+            nuevoNodo->ant = actual->ant;
+            actual->ant->sig = nuevoNodo;
+            actual->ant = nuevoNodo;
+        }
+    }
+}
+
+// Contar la cantidad de veces que cada cliente aparece en un árbol binario de búsqueda
+void contarClientesEnArbol(TClientesABB clientesABB, TAuxNodoConteo listaConteo, int idCliente) {
+    if (clientesABB != NULL) {
+        int totalClientesABB = cantidadClientesTClientesABB(clientesABB);
+
+        for (int i = 1; i <= totalClientesABB; i++) {
+            TCliente clienteActual = obtenerNesimoClienteTClientesABB(clientesABB, i);
+            int idClienteActual = idTCliente(clienteActual);
+
+            nodoConteo resultado = listaConteo->inicial;
+            // Buscar si el cliente ya esta en la lista de conteo
+            while (resultado != NULL) {
+
+                // Si el cliente ya esta en la lista, incrementar su conteo
+                if (resultado->idCliente == idClienteActual) {
+                    resultado->conteo++;
+                    return;
+                }
+
+                resultado = resultado->sig;
+            }
+
+            // Si el cliente no está en la lista de conteo, agregarlo con un conteo inicial de 1
+            insertarNodoConteo(listaConteo, idClienteActual, 1);
+        }
+    }
+}
+
+// Obtener un cliente dado su id en la colección de sucursales
+TCliente obtenerClientePorId(TClientesSucursalesLDE clientesSucursalesLDE, int idCliente) {
+    nodoLDE sucursal = clientesSucursalesLDE->inicial;
+
+    while (sucursal != NULL) {
+        TClientesABB clientesABB = sucursal->clientesABB;
+        int totalClientesABB = cantidadClientesTClientesABB(clientesABB);
+
+        for (int i = 1; i <= totalClientesABB; i++) {
+            TCliente clienteActual = obtenerNesimoClienteTClientesABB(clientesABB, i);
+
+            if (idTCliente(clienteActual) == idCliente) {
+                return clienteActual; // Retornar el cliente encontrado
+            }
+        }
+
+        sucursal = sucursal->sig;
+    }
+    return NULL; // Si no se encuentra el cliente, retornar NULL
+}
+
+// Encontrar el cliente con el mayor conteo de apariciones
+TCliente obtenerClienteConMayorConteo(TClientesSucursalesLDE clientesSucursalesLDE, TAuxNodoConteo listaConteo) {
+    if (listaConteo->inicial == NULL) {
+        return NULL; 
+    }
+
+    nodoConteo mejorNodo = listaConteo->inicial;
+    int conteoMaximo = mejorNodo->conteo;
+
+    // Iterar a traves de la lista de conteo desde el inicio hasta el final
+    nodoConteo clienteActual = mejorNodo->sig;
+    while (clienteActual != NULL) {
+
+        if (clienteActual->conteo > conteoMaximo) {
+            mejorNodo = clienteActual;
+            conteoMaximo = clienteActual->conteo;
+        } 
+        // Si el conteo es igual, seleccionar el cliente con el id menor
+        else if (clienteActual->conteo == conteoMaximo) {
+            if (clienteActual->idCliente < mejorNodo->idCliente) {
+                mejorNodo = clienteActual;
+            }
+        }
+        clienteActual = clienteActual->sig;
+    }
+
+    // Obtener el cliente con el id más repetido
+    TCliente clienteRepetido = obtenerClientePorId(clientesSucursalesLDE, mejorNodo->idCliente);
+
+    // Liberar memoria de la lista de conteo
+    while (listaConteo->inicial != NULL) {
+        nodoConteo temp = listaConteo->inicial;
+        listaConteo->inicial = listaConteo->inicial->sig;
+        delete temp; 
+    }
+    delete listaConteo;
+
+    return clienteRepetido;
+}
+
 // Dada una coleccion de clientesABB, regresa el cliente que se encuentre en la mayor cantidad de clientesABB (sucursales).
 // Un cliente se considera repetido si su id es el mismo. 
 // Si todos los clientesABB de la colección están vacíos o si la colección de clientesABB es vacía, retorna NULL.
-//  Si hay varios clientes empatados en apariciones, se retorna aquel con menor id.
-TCliente clienteMasRepetido(TClientesSucursalesLDE clientesSucursalesLDE){
-    if (clientesSucursalesLDE != NULL) {
-
+// Si hay varios clientes empatados en apariciones, se retorna aquel con menor id.
+TCliente clienteMasRepetido(TClientesSucursalesLDE clientesSucursalesLDE) {
+    if (clientesSucursalesLDE == NULL || clientesSucursalesLDE->inicial == NULL) {
+        return NULL;    // Si la colección de sucursales está vacía o todas las sucursales están vacías, retornar NULL
     }
-    
-	return NULL;
+
+    TAuxNodoConteo listaConteo = crearListaConteoVacia(); 
+
+    nodoLDE sucursal = clientesSucursalesLDE->inicial;
+    // Recorrer cada sucursal y contar los clientes en sus árboles binarios
+    while (sucursal != NULL) {
+        TClientesABB clientesABB = sucursal->clientesABB;
+        int totalClientesABB = cantidadClientesTClientesABB(clientesABB);
+
+        for (int i = 1; i <= totalClientesABB; i++) {
+            TCliente clienteActual = obtenerNesimoClienteTClientesABB(clientesABB, i);
+            int idCliente = idTCliente(clienteActual);
+            contarClientesEnArbol(clientesABB, listaConteo, idCliente); // Contar el cliente en el ABB
+        }
+        sucursal = sucursal->sig;
+    }
+
+    if (listaConteo->inicial == NULL) {
+        // Si no hay clientes en la lista de conteo, liberar la lista y retornar NULL
+        delete listaConteo;
+        return NULL;
+    }
+
+    TCliente clienteRepetido = obtenerClienteConMayorConteo(clientesSucursalesLDE, listaConteo);
+
+    return clienteRepetido;
 }
