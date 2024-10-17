@@ -25,7 +25,7 @@ TPromocion crearTPromocion(int idProm, TFecha ini, TFecha fin, int cantMax);
 
 // Actualiza la promocion para indicar que el producto "p" forma parte de la promocion.
 // La función es O(1) peor caso.
-//* PRE: p no pertenece a la promocion.
+// PRE: p no pertenece a la promocion.
 void agregarATPromocion(TPromocion &prom, TProducto p);
 
 // Devuelve true si el producto "p" forma parte de la promocion.
@@ -55,6 +55,7 @@ TFecha fechaFinTPromocion(TPromocion prom);
 // Una promocion es compatible con otra si no comparten productos durante un mismo período de tiempo.
 // O de otra manera, no son compatibles si coinciden en el tiempo y además un mismo producto
 // es parte de ambas promociones.
+// Asuma que prom1 y prom2 contienen la misma cantidad maxima de productos.
 // La función es O(n) peor caso.
 bool sonPromocionesCompatibles(TPromocion prom1, TPromocion prom2);
 

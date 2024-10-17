@@ -23,7 +23,7 @@ TPromocion crearTPromocion(int idProm, TFecha ini, TFecha fin, int cantMax){
 
 // check Testear 
 void agregarATPromocion(TPromocion &prom, TProducto p){
-  // Verificamos que 'prom'y que el producto existan
+  // Verificamos que exitan tanto la promocion como el producto
   if (prom != NULL && p!= NULL){
       insertarTConjuntoProductos(prom->conjuntoProductos, idTProducto(p));
   }
@@ -43,11 +43,13 @@ void imprimirTPromocion(TPromocion prom){
 
 // check Testear 
 void liberarTPromocion(TPromocion &prom){
-  liberarTFecha(prom->fechaInicial);
-  liberarTFecha(prom->fechaFininal);
-  liberarTConjuntoProductos(prom->conjuntoProductos);
-  delete prom;
-  prom = NULL;
+  if (prom != NULL) {
+    liberarTFecha(prom->fechaInicial);
+    liberarTFecha(prom->fechaFininal);
+    liberarTConjuntoProductos(prom->conjuntoProductos);
+    delete prom;
+    prom = NULL;
+  }
 }
 
 // check Testear 
@@ -75,7 +77,6 @@ TFecha fechaFinTPromocion(TPromocion prom){
 }
 
 // check Testear
-
 bool sonPromocionesCompatibles(TPromocion prom1, TPromocion prom2) { 
     
     if (prom1 == NULL || prom2 == NULL) return false;

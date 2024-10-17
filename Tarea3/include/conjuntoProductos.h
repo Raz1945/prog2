@@ -13,11 +13,12 @@
 #include "utils.h"
 
 // Definición de tipo TConjuntoProductos como un puntero a rep_conjuntoProductos
-// El conjunto es acotado, y la cantidad máxima de elementos define el rango de identificadores que almacena.
+// El conjunto es acotado, y la cantidad máxima de elementos define el rango de 
+// identificadores que almacena.
 // Los identificadores que almacena el conjunto cumplen 0 <= id < cantMax
 typedef struct rep_conjuntoProductos* TConjuntoProductos;
 
-//Función para crear un nuevo conjunto de productos.
+// Función para crear un nuevo conjunto de productos.
 // Devuelve un conjunto vacío
 // La funcion es Theta(n) peor caso, siendo n la cantidad máxima de elementos del conjunto
 TConjuntoProductos crearTConjuntoProductos(int cantMax);
@@ -28,8 +29,8 @@ TConjuntoProductos crearTConjuntoProductos(int cantMax);
 bool esVacioTConjuntoProductos(TConjuntoProductos conjuntoProductos);
 
 // Procedimiento para insertar el identificador "idProducto" en el conjunto "conjuntoProductos".
-//* Si "idProducto" no pertenece al rango válido de ids del conjunto "conjuntoProductos" la función no hace nada.
-//* Si "idProducto" ya pertenece al conjunto, la función no hace nada.
+// Si "idProducto" no pertenece al rango válido de ids del conjunto "conjuntoProductos" la función no hace nada.
+// Si "idProducto" ya pertenece al conjunto, la función no hace nada.
 // La función es O(1) peor caso.
 void insertarTConjuntoProductos(TConjuntoProductos &conjuntoProductos, int idProducto);
 
@@ -52,9 +53,9 @@ int cantidadTConjuntoProductos(TConjuntoProductos conjuntoProductos);
 int cantMaxTConjuntoProductos(TConjuntoProductos conjuntoProductos);
 
 // Procedimiento para imprimir el conjunto de productos.
-//* Imprime los ids de las productos del conjunto ordenado de menor a mayor.
-//* Deben imprimirse solamente los elementos, separados por un espacio, con un salto de línea al final.
-//* Ejemplo: si el conjunto "conjuntoProductos" tiene los elementos 7, 29, 42 y 75 la impresión debe ser "7 29 42 75 ".
+// Imprime los ids de las productos del conjunto ordenado de menor a mayor.
+// Deben imprimirse solamente los elementos, separados por un espacio, con un salto de línea al final.
+// Ejemplo: si el conjunto "conjuntoProductos" tiene los elementos 7, 29, 42 y 75 la impresión debe ser "7 29 42 75 ".
 // La función es O(n) peor caso, siendo "n" la cantidad máxima de elementos de "conjuntoProductos".
 void imprimirTConjuntoProductos(TConjuntoProductos conjuntoProductos);
 

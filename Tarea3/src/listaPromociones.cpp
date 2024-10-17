@@ -3,7 +3,7 @@
 // Estructura de tipo TListaPromociones:
 //* -  Almacenará elementos del tipo TPromocion 
 //  -  y se recomienda implementarla como una lista simplemente enlazada. 
-//*    La lista debe estar ordenada por fecha de inicio de la promoción.
+//*    La lista debe estar ordenada por fecha de inicio de la promocion.
 struct rep_listaPromociones {
   TPromocion prom;
   rep_listaPromociones *sig;
@@ -20,14 +20,14 @@ TListaPromociones crearTListaPromocionesVacia() {
   // return nuevaPromo; 
 }
 
-//*LISTA PRECONDICION: no existe promoción con el mismo id en la lista
-// todo TESTEAR 
+// check TESTEAR 
+//* PRE: no existe promocion con el mismo id en la lista  
 void agregarPromocionTListaPromociones(TListaPromociones &listaPromociones, TPromocion promocion) {
   TListaPromociones nuevoNodo = new rep_listaPromociones;
   nuevoNodo->prom = promocion;
 
-  // Caso 1 - La lista esta vacia o la nueva promocion va antes por fecha
-  if (listaPromociones == NULL || fechaInicioTPromocion(listaPromociones->prom) >= fechaInicioTPromocion(promocion)) {
+  // Caso 1 - La lista está vacia o la nueva promocion va antes o es igual por fecha
+  if (listaPromociones == NULL || compararTFechas(fechaInicioTPromocion(listaPromociones->prom), fechaInicioTPromocion(promocion)) >= 0) {
     nuevoNodo->sig = listaPromociones;
     listaPromociones = nuevoNodo;
   } else {
@@ -35,17 +35,18 @@ void agregarPromocionTListaPromociones(TListaPromociones &listaPromociones, TPro
     TListaPromociones actual = listaPromociones;
     TListaPromociones siguiente = actual->sig;
 
-    while (siguiente != NULL && (fechaInicioTPromocion(siguiente->prom) < fechaInicioTPromocion(promocion))) {
+    while (siguiente != NULL && compararTFechas(fechaInicioTPromocion(siguiente->prom), fechaInicioTPromocion(promocion)) < 0) {
       actual = siguiente;
-      siguiente = siguiente->sig;        
+      siguiente = siguiente->sig;
     }
 
+    // Insertamos la nueva promocion 
     nuevoNodo->sig = siguiente;
     actual->sig = nuevoNodo;
   }
 }
 
-// todo TESTEAR 
+// check TESTEAR 
 void imprimirTListaPromociones(TListaPromociones listaPromociones) {
   TListaPromociones actual = listaPromociones;
 
@@ -55,13 +56,18 @@ void imprimirTListaPromociones(TListaPromociones listaPromociones) {
   }
 }
 
-// todo TESTEAR 
+// check TESTEAR 
 void liberarTListaPromociones(TListaPromociones &listaPromociones, bool liberarPromociones) {
   TListaPromociones actual = listaPromociones;
 
   while ((actual != NULL)){
     TListaPromociones temp = actual;
-    liberarTPromocion(actual->prom);
+    
+    // Solo liberamos la promocion si 'liberarPromociones' es true
+    if (liberarPromociones) {
+      liberarTPromocion(actual->prom);
+    }
+    
     actual = actual->sig;
     delete temp;
   }
@@ -69,60 +75,59 @@ void liberarTListaPromociones(TListaPromociones &listaPromociones, bool liberarP
   listaPromociones = NULL;  
 }
 
-// todo TESTEAR 
+// check TESTEAR 
 bool esVaciaTListaPromociones(TListaPromociones promociones) {
   return promociones != NULL ? false : true;
 }
 
-
-// todo TESTEAR 
+// check TESTEAR 
 bool pertenecePromocionTListaPromociones(TListaPromociones listaPromociones, int idPromocion) {
   TListaPromociones idActual = listaPromociones;
 
-  while (idActual != NULL && idTPromocion(listaPromociones->prom) != idPromocion){
+  while (idActual != NULL && idTPromocion(idActual->prom) != idPromocion){
     idActual = idActual->sig;
   }
   
   return idActual != NULL;
 }
 
-// todo Testear 
-//* PRE: La promoción pertenece a la lista.
+// check Testear 
+//* PRE: La promocion pertenece a la lista.
 TPromocion obtenerPromocionTListaPromociones(TListaPromociones listaPromociones, int idPromocion) {
   TListaPromociones idActual = listaPromociones;
-
-  while (idActual != NULL && idTPromocion(listaPromociones->prom) != idPromocion){
+  
+  while (idActual != NULL && idTPromocion(idActual->prom) != idPromocion){
     idActual = idActual->sig;
   }
-  
   return idActual->prom;
 }
 
-// todo Testear 
+// check Testear 
 TListaPromociones obtenerPromocionesFinalizadas(TListaPromociones &listaPromociones, TFecha fecha) {
   TListaPromociones finalizadas = NULL;
   TListaPromociones actual = listaPromociones;
   TListaPromociones anterior = NULL;
 
   while (actual != NULL) {
-    if (fechaFinTPromocion(actual->prom) < fecha) {
-      agregarPromocionTListaPromociones(finalizadas, actual->prom);
-      
+    // Verificamos si la promocion finalizo
+    // Comparando que fecha de fin de la promocion actual sea mayor a la fecha dada
+    if (compararTFechas(fechaFinTPromocion(actual->prom), fecha) < 0) {
+
+      TPromocion promoAAgregar = actual->prom;
+      agregarPromocionTListaPromociones(finalizadas, promoAAgregar);
+
+      // Remover la promocion de la lista original
       if (anterior == NULL) {
-        // Caso 1 - Si estamos eliminando el primer nodo
-        listaPromociones = actual->sig;
+        listaPromociones = actual->sig; 
       } else {
-        // Caso 2 - Si estamos eliminando un nodo en el medio o al final
-        anterior->sig = actual->sig;
+        anterior->sig = actual->sig; 
       }
 
+      // Eliminar el nodo actual de la lista original
       TListaPromociones aBorrar = actual;
-      actual = actual->sig; // Avanzamos el puntero 'actual' antes de liberar el nodo 
-                            // para no perder la referencia de hacia dónde apunta el siguiente nodo antes de liberar el nodo actual.      
-      liberarTPromocion(aBorrar->prom);
+      actual = actual->sig;
       delete aBorrar;
     } else {
-      // Si la promocion no ha finalizado, simplemente avanzamos
       anterior = actual;
       actual = actual->sig;
     }
@@ -131,45 +136,71 @@ TListaPromociones obtenerPromocionesFinalizadas(TListaPromociones &listaPromocio
   return finalizadas;
 }
 
-
-// todo Testear 
+// check Testear 
 TListaPromociones obtenerPromocionesActivas(TListaPromociones &listaPromociones, TFecha fecha) {
   TListaPromociones activas = NULL;
   TListaPromociones actual = listaPromociones;
   TListaPromociones anterior = NULL;
 
+  while (actual != NULL) {
+    // Verificamos si la promocion esta activa
+    // Comparando si la fecha de fin de la promocion actual es mayor que la fecha dada
+    // y que la fecha de inicio de la promocion actual sea menor o igual a la fecha dada
+    if (compararTFechas(fechaFinTPromocion(actual->prom), fecha) > 0 && 
+        (compararTFechas(fechaInicioTPromocion(actual->prom), fecha) <= 0)) {
 
-  while (actual != NULL){
-    if (fechaFinTPromocion(actual->prom) >= fecha){
-      agregarPromocionTListaPromociones(activas, actual->prom);
+      TPromocion promoAAgregar = actual->prom;
+      agregarPromocionTListaPromociones(activas, promoAAgregar);
 
+      // Remover la promocion de la lista original
       if (anterior == NULL) {
         listaPromociones = actual->sig;
       } else {
         anterior->sig = actual->sig;
       }
-      
+
+      // Eliminar el nodo actual de la lista original
       TListaPromociones aBorrar = actual;
       actual = actual->sig;
-      liberarTPromocion(aBorrar->prom);
-      delete aBorrar;      
+      delete aBorrar;
     } else {
       anterior = actual;
       actual = actual->sig;
     }
   }
-  
+
   return activas;
 }
 
-// todo Testear 
-
+// check Testear 
 bool esCompatibleTListaPromociones(TListaPromociones listaPromociones, TPromocion promocion) {
-
-  return false;
+  TListaPromociones actual = listaPromociones;
+  
+  while (actual != NULL && sonPromocionesCompatibles(actual->prom, promocion)){
+    actual = actual->sig;
+  }
+  
+  return actual == NULL;
 }
 
-TListaPromociones unirListaPromociones(TListaPromociones listaPromociones1,
-                                       TListaPromociones listaPromociones2) {
-  return NULL;
+// check Testear 
+//* PRE: las listas no tienen promociones en común (no tienen ids repetidos)
+TListaPromociones unirListaPromociones(TListaPromociones listaPromociones1, TListaPromociones listaPromociones2) {
+  TListaPromociones nuevaLista = NULL;
+
+  // Agregar todas las promociones de la primera lista a la nueva lista
+  TListaPromociones actual1 = listaPromociones1;
+  while (actual1 != NULL) {
+    agregarPromocionTListaPromociones(nuevaLista, actual1->prom);
+    actual1 = actual1->sig;
+  }
+
+  // Agregar todas las promociones de la segunda lista a la nueva lista
+  TListaPromociones actual2 = listaPromociones2;
+  while (actual2 != NULL) {
+    agregarPromocionTListaPromociones(nuevaLista, actual2->prom);
+    actual2 = actual2->sig;
+  }
+
+  return nuevaLista;
 }

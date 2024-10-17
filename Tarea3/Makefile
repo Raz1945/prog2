@@ -163,24 +163,24 @@ t-%:$(INDIR)/%.in $(OUTDIR)/%.out
 # Si el tamaño de $(LST_ERR) no es cero imprime los casos con error.
 # Con `sed` se elimina el nombre de directorio y la extensión.
 testing:all $(DIFFS)
-	@LST_ERR=$$(find $(SALIDADIR) -name *.diff* -size +0c -print);          \
-	if [ -n "$${LST_ERR}" ];                                                \
-	then                                                                    \
+	@LST_ERR=$$(find $(SALIDADIR) -name *.diff* -size +0c -print);      \
+	if [ -n "$${LST_ERR}" ];                                            \
+	then                                                                \
 		echo -- CASOS CON ERRORES --;                                   \
 		echo "$${LST_ERR}" | sed -e 's/.*\///' -e 's/\..*//';           \
-	fi;                                                                     \
-	echo -- RESULTADO DE CADA CASO --;                                      \
-	RES=;                                                                   \
-	for id in $(IDS_PUBLICOS); do                                                    \
+	fi;                                                                 \
+	echo "-- RESULTADO DE CADA CASO --";                                \
+	RES="";                                                             \
+	for id in $(IDS_PUBLICOS); do   									\
 		if [ 0 -eq $$(stat -c %s "$(SALIDADIR)/$${id}.diff") ];         \
 		then                                                            \
-			RES=$${RES}1 ;                                          \
+			RES=$${RES}1 ;                                              \
 		else                                                            \
-			RES=$${RES}0 ;                                          \
+			RES=$${RES}0 ;                                              \
 		fi;                                                             \
-	done;                                                            \                                                        \
+	done;                                                               \
 	RES=$${RES}-;  														\
-	for id in $(IDS_PRIVADOS); do                                       \
+	for id in $(IDS_PRIVADOS); do     									\
 		if [ 0 -eq $$(stat -c %s "$(SALIDADIR)/$${id}.diff") ];         \
 		then                                                            \
 			RES=$${RES}1 ;                                          	\
@@ -188,7 +188,7 @@ testing:all $(DIFFS)
 			RES=$${RES}0 ;                                         		\
 		fi;                                                             \
 	done;                                                               \
-	echo $${RES}   
+	echo "$${RES}"   
 	
 # inlcuye la clave de cada archivo en $(ARCHIVO_CLAVES)
 $(ARCHIVO_CLAVES):
