@@ -10,7 +10,6 @@ struct rep_conjuntoProductos{
     int maxProductos;   // cota ~ cantidad maxima de productos
 };
     
-// check Testear
 TConjuntoProductos crearTConjuntoProductos(int cantMax){
     TConjuntoProductos nuevoConjunto = new rep_conjuntoProductos;   // Asigna memoria para el conjunto
     nuevoConjunto->ArrayIdProductos = new int[cantMax]();   //* Asigna e inicializa el array de enteros en 0
@@ -20,7 +19,6 @@ TConjuntoProductos crearTConjuntoProductos(int cantMax){
     return nuevoConjunto;
 }
 
-// check Testear
 void insertarTConjuntoProductos(TConjuntoProductos &conjuntoProductos, int idProducto){
     // Veriicamos que este en el rango valido
     if (0 <= idProducto  && idProducto < conjuntoProductos->maxProductos) {
@@ -33,7 +31,6 @@ void insertarTConjuntoProductos(TConjuntoProductos &conjuntoProductos, int idPro
     }
 }
 
-// check Testear
 void imprimirTConjuntoProductos(TConjuntoProductos conjuntoProductos){
     for (int i = 0; i < conjuntoProductos->maxProductos; i++) {
         // note:
@@ -47,7 +44,6 @@ void imprimirTConjuntoProductos(TConjuntoProductos conjuntoProductos){
     printf("\n");
 }
 
-// check Testear
 void liberarTConjuntoProductos(TConjuntoProductos &conjuntoProductos){
     delete[] conjuntoProductos->ArrayIdProductos;   //* Liberamos la memoria ocupada por el array de identificadores
     delete[] conjuntoProductos->productoRegistrado; //* Liberamos la memoria ocupada por el array de registros
@@ -55,22 +51,18 @@ void liberarTConjuntoProductos(TConjuntoProductos &conjuntoProductos){
     conjuntoProductos = NULL;
 }
 
-// check Testear 
 bool esVacioTConjuntoProductos(TConjuntoProductos conjuntoProductos){ 
     return conjuntoProductos->cantidadActual == 0;
 }
 
-// check Testear 
 int cantidadTConjuntoProductos(TConjuntoProductos conjuntoProductos){ 
     return conjuntoProductos->cantidadActual; 
 }
 
-// check Testear 
 int cantMaxTConjuntoProductos(TConjuntoProductos conjuntoProductos){ 
     return conjuntoProductos->maxProductos;
 }
 
-// check Testear
 bool perteneceTConjuntoProductos(TConjuntoProductos conjuntoProductos, int idProducto){ 
     // Verificamos que el conjunto no sea nulo y que el id esté dentro del rango válido
     if (conjuntoProductos == NULL || idProducto < 0 || idProducto >= conjuntoProductos->maxProductos) {
@@ -79,7 +71,6 @@ bool perteneceTConjuntoProductos(TConjuntoProductos conjuntoProductos, int idPro
     return conjuntoProductos->productoRegistrado[idProducto];
 }
 
-// check Testear
 void borrarDeTConjuntoProductos(TConjuntoProductos &conjuntoProductos, int idProducto){
     // Verificamos que el conjunto no sea nulo y que el id esté dentro del rango válido
     if (conjuntoProductos != NULL && 0 <= idProducto && idProducto < conjuntoProductos->maxProductos) {
@@ -107,8 +98,6 @@ void borrarDeTConjuntoProductos(TConjuntoProductos &conjuntoProductos, int idPro
     } 
 }
 
-// check TESTEAR 
-//<> Tiene una pregunta 
 TConjuntoProductos unionTConjuntoProductos(TConjuntoProductos conjuntoProductos1, TConjuntoProductos conjuntoProductos2){
 
     if (conjuntoProductos1 == NULL){
@@ -119,14 +108,7 @@ TConjuntoProductos unionTConjuntoProductos(TConjuntoProductos conjuntoProductos1
         return conjuntoProductos1;
     }
 
-    //? PREGUNTAR
-    // No me queda clar si el 'conjuntoUnion' tiene que tener la misma ó una mayor capacidad de almacenamiento (la suma de ambos)
-    // En el caso de que ambos conjuntos esten completos. Como tienen la misma cantidad máxima de elementos, "n". 
-    // El 'conjuntoUnion' tendria que ser la suma de las capacidades ambos.
     int maximo = conjuntoProductos1->maxProductos + conjuntoProductos2->maxProductos;
-
-    // Si el 'conjuntoUnion' tuviera que respetar la capacidad maxima de elementos de cualquiera de los conjuntos
-    // int maximo = conjuntoProductos1->maxProductos; 
 
     // Creamo el conjuntoUnion
     TConjuntoProductos conjuntoUnion = crearTConjuntoProductos(maximo);
@@ -157,8 +139,6 @@ TConjuntoProductos unionTConjuntoProductos(TConjuntoProductos conjuntoProductos1
     return conjuntoUnion;
 }
 
-// check TESTEAR 
-
 TConjuntoProductos interseccionTConjuntoProductos(TConjuntoProductos conjuntoProductos1, TConjuntoProductos conjuntoProductos2){ 
     // Verifico la existencia de los conjuntos
     if (conjuntoProductos1 == NULL || conjuntoProductos2 == NULL){
@@ -182,23 +162,14 @@ TConjuntoProductos interseccionTConjuntoProductos(TConjuntoProductos conjuntoPro
     return conjuntoInterseccion;
 }
 
-// check TESTEAR 
-//<> Tiene una pregunta 
 TConjuntoProductos diferenciaTConjuntoProductos(TConjuntoProductos conjuntoProductos1, TConjuntoProductos conjuntoProductos2){ 
     // Verifico la existencia de los conjuntos
     if (conjuntoProductos1 == NULL || conjuntoProductos2 == NULL){
         return crearTConjuntoProductos(0);  // retornamos un conjunto vacío
     }
 
-    //? PREGUNTAR
-    // El 'conjuntoDiferencia' tiene que tener la misma ó una mayor capacidad de almacenamiento
-    // En el caso de que ambos conjuntos esten completos y todos sus elementos sean diferentes a los del otro conjunto.
-    // Como tienen la misma cantidad máxima de elementos, "n".
     // El 'conjuntoDiferencia' tendria que ser la suma de las capacidades ambos.
     int maximo = conjuntoProductos1->maxProductos + conjuntoProductos2->maxProductos;
-
-    // Si se tuviera que respetar el cantMax 
-    // int maximo = conjuntoProductos1->maxProductos;
 
     TConjuntoProductos conjuntoDiferencia = crearTConjuntoProductos(maximo);
 

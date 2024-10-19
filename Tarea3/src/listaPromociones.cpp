@@ -10,21 +10,14 @@ struct rep_listaPromociones {
 };
 
 TListaPromociones crearTListaPromocionesVacia() { 
-  TListaPromociones nuevaPromo = NULL;
-  return nuevaPromo; 
-
-//note Otra manera:
-  // TListaPromociones nuevaPromo = new rep_listaPromociones;
-  // nuevaPromo->prom = NULL;
-  // nuevaPromo->sig = NULL;
-  // return nuevaPromo; 
+  return NULL;   
 }
 
-// check TESTEAR 
 //* PRE: no existe promocion con el mismo id en la lista  
 void agregarPromocionTListaPromociones(TListaPromociones &listaPromociones, TPromocion promocion) {
   TListaPromociones nuevoNodo = new rep_listaPromociones;
   nuevoNodo->prom = promocion;
+  nuevoNodo->sig = NULL;
 
   // Caso 1 - La lista está vacia o la nueva promocion va antes o es igual por fecha
   if (listaPromociones == NULL || compararTFechas(fechaInicioTPromocion(listaPromociones->prom), fechaInicioTPromocion(promocion)) >= 0) {
@@ -46,7 +39,6 @@ void agregarPromocionTListaPromociones(TListaPromociones &listaPromociones, TPro
   }
 }
 
-// check TESTEAR 
 void imprimirTListaPromociones(TListaPromociones listaPromociones) {
   TListaPromociones actual = listaPromociones;
 
@@ -56,18 +48,16 @@ void imprimirTListaPromociones(TListaPromociones listaPromociones) {
   }
 }
 
-// check TESTEAR 
 void liberarTListaPromociones(TListaPromociones &listaPromociones, bool liberarPromociones) {
   TListaPromociones actual = listaPromociones;
 
   while ((actual != NULL)){
     TListaPromociones temp = actual;
-    
+
     // Solo liberamos la promocion si 'liberarPromociones' es true
-    if (liberarPromociones) {
-      liberarTPromocion(actual->prom);
+    if (liberarPromociones) { 
+      liberarTPromocion(actual->prom); 
     }
-    
     actual = actual->sig;
     delete temp;
   }
@@ -75,12 +65,10 @@ void liberarTListaPromociones(TListaPromociones &listaPromociones, bool liberarP
   listaPromociones = NULL;  
 }
 
-// check TESTEAR 
 bool esVaciaTListaPromociones(TListaPromociones promociones) {
-  return promociones != NULL ? false : true;
+  return promociones == NULL;
 }
 
-// check TESTEAR 
 bool pertenecePromocionTListaPromociones(TListaPromociones listaPromociones, int idPromocion) {
   TListaPromociones idActual = listaPromociones;
 
@@ -91,7 +79,6 @@ bool pertenecePromocionTListaPromociones(TListaPromociones listaPromociones, int
   return idActual != NULL;
 }
 
-// check Testear 
 //* PRE: La promocion pertenece a la lista.
 TPromocion obtenerPromocionTListaPromociones(TListaPromociones listaPromociones, int idPromocion) {
   TListaPromociones idActual = listaPromociones;
@@ -102,77 +89,97 @@ TPromocion obtenerPromocionTListaPromociones(TListaPromociones listaPromociones,
   return idActual->prom;
 }
 
-// check Testear 
 TListaPromociones obtenerPromocionesFinalizadas(TListaPromociones &listaPromociones, TFecha fecha) {
-  TListaPromociones finalizadas = NULL;
-  TListaPromociones actual = listaPromociones;
-  TListaPromociones anterior = NULL;
+    TListaPromociones finalizadas = NULL;
+    TListaPromociones actual = listaPromociones;
+    TListaPromociones anterior = NULL;
 
-  while (actual != NULL) {
-    // Verificamos si la promocion finalizo
-    // Comparando que fecha de fin de la promocion actual sea mayor a la fecha dada
-    if (compararTFechas(fechaFinTPromocion(actual->prom), fecha) < 0) {
+    while (actual != NULL) {
+        TListaPromociones siguiente = actual->sig;
 
-      TPromocion promoAAgregar = actual->prom;
-      agregarPromocionTListaPromociones(finalizadas, promoAAgregar);
+        // Si la promoción ha finalizado
+        if (compararTFechas(fechaFinTPromocion(actual->prom), fecha) < 0) {
+            // Desenganchamos el nodo de la lista original
+            if (anterior == NULL) {
+                listaPromociones = siguiente;
+            } else {
+                anterior->sig = siguiente;
+            }
 
-      // Remover la promocion de la lista original
-      if (anterior == NULL) {
-        listaPromociones = actual->sig; 
-      } else {
-        anterior->sig = actual->sig; 
-      }
+            // Insertamos el nodo en la lista finalizadas de manera ordenada
+            TListaPromociones posInsert = finalizadas;
+            TListaPromociones anteriorInsert = NULL;
 
-      // Eliminar el nodo actual de la lista original
-      TListaPromociones aBorrar = actual;
-      actual = actual->sig;
-      delete aBorrar;
-    } else {
-      anterior = actual;
-      actual = actual->sig;
+            while (posInsert != NULL && compararTFechas(fechaInicioTPromocion(posInsert->prom), fechaInicioTPromocion(actual->prom)) < 0) {
+                anteriorInsert = posInsert;
+                posInsert = posInsert->sig;
+            }
+
+            // Enganchamos el nodo actual en la posición correcta
+            if (anteriorInsert == NULL) {
+                actual->sig = finalizadas;
+                finalizadas = actual;
+            } else {
+                actual->sig = posInsert;
+                anteriorInsert->sig = actual;
+            }
+        } else {
+            anterior = actual;
+        }
+
+        actual = siguiente;
     }
-  }
 
-  return finalizadas;
+    return finalizadas;
 }
 
-// check Testear 
 TListaPromociones obtenerPromocionesActivas(TListaPromociones &listaPromociones, TFecha fecha) {
   TListaPromociones activas = NULL;
   TListaPromociones actual = listaPromociones;
   TListaPromociones anterior = NULL;
 
   while (actual != NULL) {
-    // Verificamos si la promocion esta activa
-    // Comparando si la fecha de fin de la promocion actual es mayor que la fecha dada
-    // y que la fecha de inicio de la promocion actual sea menor o igual a la fecha dada
-    if (compararTFechas(fechaFinTPromocion(actual->prom), fecha) > 0 && 
-        (compararTFechas(fechaInicioTPromocion(actual->prom), fecha) <= 0)) {
+      TListaPromociones siguiente = actual->sig;
 
-      TPromocion promoAAgregar = actual->prom;
-      agregarPromocionTListaPromociones(activas, promoAAgregar);
+      // Verificamos si la promoción está activa
+      if (compararTFechas(fechaFinTPromocion(actual->prom), fecha) > 0 && 
+          compararTFechas(fechaInicioTPromocion(actual->prom), fecha) <= 0) {
 
-      // Remover la promocion de la lista original
-      if (anterior == NULL) {
-        listaPromociones = actual->sig;
+          // Desenganchamos el nodo de la lista original
+          if (anterior == NULL) {
+              listaPromociones = siguiente;
+          } else {
+              anterior->sig = siguiente;
+          }
+
+          // Insertamos el nodo en la lista activas de manera ordenada
+          TListaPromociones posInsert = activas;
+          TListaPromociones anteriorInsert = NULL;
+
+          while (posInsert != NULL && compararTFechas(fechaInicioTPromocion(posInsert->prom), fechaInicioTPromocion(actual->prom)) < 0) {
+              anteriorInsert = posInsert;
+              posInsert = posInsert->sig;
+          }
+
+          // Enganchamos el nodo actual en la posición correcta
+          if (anteriorInsert == NULL) {
+              actual->sig = activas;
+              activas = actual;
+          } else {
+              actual->sig = posInsert;
+              anteriorInsert->sig = actual;
+          }
       } else {
-        anterior->sig = actual->sig;
+          anterior = actual;
       }
 
-      // Eliminar el nodo actual de la lista original
-      TListaPromociones aBorrar = actual;
-      actual = actual->sig;
-      delete aBorrar;
-    } else {
-      anterior = actual;
-      actual = actual->sig;
-    }
+      actual = siguiente;
   }
 
   return activas;
 }
 
-// check Testear 
+
 bool esCompatibleTListaPromociones(TListaPromociones listaPromociones, TPromocion promocion) {
   TListaPromociones actual = listaPromociones;
   
@@ -183,7 +190,6 @@ bool esCompatibleTListaPromociones(TListaPromociones listaPromociones, TPromocio
   return actual == NULL;
 }
 
-// check Testear 
 //* PRE: las listas no tienen promociones en común (no tienen ids repetidos)
 TListaPromociones unirListaPromociones(TListaPromociones listaPromociones1, TListaPromociones listaPromociones2) {
   TListaPromociones nuevaLista = NULL;

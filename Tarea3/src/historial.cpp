@@ -10,7 +10,6 @@ struct rep_historial {
   TFecha fechaActual;
 };
 
-// check Testear 
 THistorial crearTHistorial(TFecha fecha) {
   THistorial historial = new rep_historial;
   historial->fechaActual = fecha;
@@ -21,7 +20,6 @@ THistorial crearTHistorial(TFecha fecha) {
   return historial;
 }
 
-// check Testear 
 //* PRE: esCompatiblePromocionHistorial
 void agregarPromocionTHistorial(THistorial historial, TPromocion promocion) {
   if (historial != NULL) {
@@ -43,7 +41,6 @@ void agregarPromocionTHistorial(THistorial historial, TPromocion promocion) {
   }
 }
 
-// check Testear 
 //* PRE: No existe el producto (con 'idProducto') en la promoción del historial
 //* PRE: existe una promoción en el historial con id 'idPromo'
 void agregarProductoAPromocionTHistorial(THistorial historial, TProducto producto, int idPromo) {
@@ -70,26 +67,59 @@ void agregarProductoAPromocionTHistorial(THistorial historial, TProducto product
   }
 }
 
+// todo Revisar 
+//* PRE: fecha es posterior a la fechaActual de historial
 void avanzarAFechaTHistorial(THistorial historial, TFecha fecha) {
-  
+
+  // Actualizamos la fecha del historial
+  liberarTFecha(historial->fechaActual);
+  historial->fechaActual = fecha;
+
+
+  // Procesamos las listas usando las funciones del módulo
+  TListaPromociones promocionesFinalizadas = obtenerPromocionesFinalizadas(historial->PromActivas, fecha);
+  TListaPromociones promocionesActivas = obtenerPromocionesActivas(historial->PromFuturas, fecha);
+
+  // Actualizamos las listas en el historial
+  TListaPromociones oldPromoFinalizadas = historial->PromFinalizadas;
+  TListaPromociones oldPromoActivas = historial->PromActivas;
+  historial->PromFinalizadas = unirListaPromociones(historial->PromFinalizadas, promocionesFinalizadas);
+  historial->PromActivas = unirListaPromociones(historial->PromActivas, promocionesActivas);
+
+  // Liberar memoria de las listas intermedias si no se usan más.
+  if (promocionesFinalizadas != NULL) {
+    liberarTListaPromociones(promocionesFinalizadas, false);
+  }
+  if (promocionesActivas != NULL) {
+    liberarTListaPromociones(promocionesActivas, false);
+  }
+  liberarTListaPromociones(oldPromoActivas, false);
+  liberarTListaPromociones(oldPromoFinalizadas, false);
 }
 
-void imprimirPromocionesFinalizadosTHistorial(THistorial historial) {}
+void imprimirPromocionesFinalizadosTHistorial(THistorial historial) {
+    imprimirTListaPromociones(historial->PromFinalizadas);
+}
 
-void imprimirPromocionesActivasTHistorial(THistorial historial) {}
+void imprimirPromocionesActivasTHistorial(THistorial historial) {
+    imprimirTListaPromociones(historial->PromActivas);
+}
 
-void imprimirPromocionesFuturasTHistorial(THistorial historial) {}
+void imprimirPromocionesFuturasTHistorial(THistorial historial) {
+  imprimirTListaPromociones(historial->PromFuturas);
+}
 
-bool esCompatiblePromocionTHistorial(THistorial historial, TPromocion promocion) { return false; }
+bool esCompatiblePromocionTHistorial(THistorial historial, TPromocion promocion) { 
+    return esCompatibleTListaPromociones(historial->PromFinalizadas, promocion) &&
+           esCompatibleTListaPromociones(historial->PromActivas, promocion) &&
+           esCompatibleTListaPromociones(historial->PromFuturas, promocion);
+}
 
-// check Testear 
 void liberarTHistorial(THistorial &historial) {
-  if (historial != NULL){
-    liberarTListaPromociones(historial->PromFinalizadas,true);
-    liberarTListaPromociones(historial->PromActivas,true);
-    liberarTListaPromociones(historial->PromFuturas,true);
-    liberarTFecha(historial->fechaActual); 
-    delete historial;
-    historial = NULL;
-  }
+  liberarTListaPromociones(historial->PromFinalizadas,true);
+  liberarTListaPromociones(historial->PromActivas,true);
+  liberarTListaPromociones(historial->PromFuturas,true);
+  liberarTFecha(historial->fechaActual); 
+  delete historial;
+  historial = NULL;
 }

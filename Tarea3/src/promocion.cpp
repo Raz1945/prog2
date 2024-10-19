@@ -6,22 +6,20 @@
 struct rep_promocion {
   int idProm;
   TFecha fechaInicial;
-  TFecha fechaFininal;
+  TFecha fechaFinal;
   TConjuntoProductos conjuntoProductos;
 };
 
-// check Testear 
 TPromocion crearTPromocion(int idProm, TFecha ini, TFecha fin, int cantMax){ 
   TPromocion nuevaPromo = new rep_promocion;
   nuevaPromo->idProm = idProm;
   nuevaPromo->fechaInicial = ini;
-  nuevaPromo->fechaFininal = fin;
+  nuevaPromo->fechaFinal = fin;
   nuevaPromo->conjuntoProductos = crearTConjuntoProductos(cantMax) ;
 
   return nuevaPromo;
 }
 
-// check Testear 
 void agregarATPromocion(TPromocion &prom, TProducto p){
   // Verificamos que exitan tanto la promocion como el producto
   if (prom != NULL && p!= NULL){
@@ -29,54 +27,46 @@ void agregarATPromocion(TPromocion &prom, TProducto p){
   }
 }
 
-// check Testear 
 void imprimirTPromocion(TPromocion prom){
   printf("Promocion #%d del ",prom->idProm);
   imprimirTFecha(prom->fechaInicial);
   printf(" al ");
-  imprimirTFecha(prom->fechaFininal);
+  imprimirTFecha(prom->fechaFinal);
   printf("\n");
 
   printf("Productos: ");
   imprimirTConjuntoProductos(prom->conjuntoProductos);
 }
 
-// check Testear 
 void liberarTPromocion(TPromocion &prom){
-  if (prom != NULL) {
-    liberarTFecha(prom->fechaInicial);
-    liberarTFecha(prom->fechaFininal);
-    liberarTConjuntoProductos(prom->conjuntoProductos);
-    delete prom;
-    prom = NULL;
-  }
+  liberarTFecha(prom->fechaInicial);
+  liberarTFecha(prom->fechaFinal);
+  liberarTConjuntoProductos(prom->conjuntoProductos);
+
+  delete prom;
+  prom = NULL;
 }
 
-// check Testear 
 bool perteneceATPromocion(TPromocion prom, TProducto p){
   if (prom == NULL || p == NULL) return false;
   return perteneceTConjuntoProductos(prom->conjuntoProductos, idTProducto(p));  
 }
 
-// check Testear 
 int idTPromocion(TPromocion prom){ 
   if (prom == NULL) return 0; 
   return prom->idProm;
 }
 
-// check Testear 
 TFecha fechaInicioTPromocion(TPromocion prom){ 
   if (prom == NULL) return NULL; 
   return prom->fechaInicial;
 }
 
-// check Testear 
 TFecha fechaFinTPromocion(TPromocion prom){
   if (prom == NULL) return NULL; 
-  return prom->fechaFininal;
+  return prom->fechaFinal;
 }
 
-// check Testear
 bool sonPromocionesCompatibles(TPromocion prom1, TPromocion prom2) { 
     
     if (prom1 == NULL || prom2 == NULL) return false;
