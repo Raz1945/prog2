@@ -1,0 +1,35 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+			{
+					"type": "shell",
+					"label": "build project",
+					"command": "/usr/bin/g++",
+					"args": [
+							"-g",
+							"Tarea3/principal.cpp",
+							"Tarea3/src/carritoProductos.cpp",
+							"Tarea3/src/cliente.cpp",
+							"Tarea3/src/clientesABB.cpp",
+							"Tarea3/src/clientesSucursalesLDE.cpp",
+							"Tarea3/src/conjuntoProductos.cpp",
+							"Tarea3/src/fecha.cpp",
+							"Tarea3/src/historial.cpp",
+							"Tarea3/src/listaPromociones.cpp",
+							"Tarea3/src/producto.cpp",
+							"Tarea3/src/promocion.cpp",
+							"Tarea3/src/utils.cpp",
+							"-o",
+							"principal"
+					],
+					"group": {
+							"kind": "build",
+							"isDefault": true
+					},
+					"problemMatcher": [
+							"$gcc"
+					],
+					"detail": "Compilación del proyecto completo con g++"
+			}
+	]
+}

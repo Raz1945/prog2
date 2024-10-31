@@ -1,0 +1,4 @@
+570839d575c86fdd2f31ae0cf934abc675ce92f7  src/conjuntoProductos.cpp
+90bed10c7602ca7e0d4bb3998994dbe3f1652ae1  src/promocion.cpp
+bf77995335bdb1c9546b37a243df45ac4f94e11d  src/listaPromociones.cpp
+c4a6c6799f08cf0cd09b32ada45a5aef59114e27  src/historial.cpp

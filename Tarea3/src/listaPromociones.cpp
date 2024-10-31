@@ -179,7 +179,6 @@ TListaPromociones obtenerPromocionesActivas(TListaPromociones &listaPromociones,
   return activas;
 }
 
-
 bool esCompatibleTListaPromociones(TListaPromociones listaPromociones, TPromocion promocion) {
   TListaPromociones actual = listaPromociones;
   
