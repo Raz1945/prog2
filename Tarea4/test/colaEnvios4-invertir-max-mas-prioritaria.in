@@ -19,9 +19,10 @@ crearEnvio 1/1/2024
 encolarEnvioColaEnvios
 masPrioritarioColaEnvios
 maxColaEnvios
-imprimirColaEnvios
 invertirPrioridadColaEnvios
 masPrioritarioColaEnvios
-imprimirColaEnvios
+desencolarColaEnvios
+desencolarColaEnvios
+desencolarColaEnvios
 liberarColaEnvios
 Fin

@@ -27,12 +27,11 @@ void agregarQuejaTablaQuejas(TablaQuejas tabla, TQueja queja);
 // Para cada posición i entre 0 y cantEstimadas de la tabla:
 //     Si no hay una queja guardada en dicha posición, imprime
 //        No hay elementos guardados en la posicion i de la tabla.
-//     Si hay queja las imprime (en el orden que aparecen) utilizando la función imprimirTQueja: 
-//     Elementos en la posicion <i> de la tabla:
-//.       <queja_1>
-//.       <queja_2>
-//        ...
-//.       <queja_N>
+//     Si hay queja las imprime (en el orden que aparecen) utilizando la función
+//     imprimirTQueja: Elementos en la posicion <i> de la tabla: <queja_1>
+//     <queja_2>
+//     ...
+//     <queja_N>
 void imprimirTablaQuejas(TablaQuejas tabla);
 
 // Devuelve true si existe una queja para la fecha indicada y false en caso

@@ -25,52 +25,27 @@ Precio: 10
 Ingresado el: 8/8/2001
 Fecha del envio: 1/1/2025
 21> La cantidad maxima de envios en la cola de envios es: 3
-22> 
-Nivel 1
-1) Producto: 8
-Manzana
-Precio: 10
-Ingresado el: 8/8/2001
-Fecha del envio: 1/1/2025
-
-Nivel 2
-2) Producto: 7
-Leche
-Precio: 17
-Ingresado el: 6/6/2001
-Fecha del envio: 10/10/2010
-3) Producto: 8
-Manzana
-Precio: 10
-Ingresado el: 8/8/2001
-Fecha del envio: 1/1/2024
-
-23> Se ejecuto invertirPrioridadTColaEnvios exitosamente.
-24> El envio con mayor prioridad de la cola de envios es:
+22> Se ejecuto invertirPrioridadTColaEnvios exitosamente.
+23> El envio con mayor prioridad de la cola de envios es:
 Producto: 7
 Leche
 Precio: 17
 Ingresado el: 6/6/2001
 Fecha del envio: 10/10/2010
-25> 
-Nivel 1
-1) Producto: 7
+24> Producto: 7
 Leche
 Precio: 17
 Ingresado el: 6/6/2001
 Fecha del envio: 10/10/2010
-
-Nivel 2
-2) Producto: 8
-Manzana
-Precio: 10
-Ingresado el: 8/8/2001
-Fecha del envio: 1/1/2025
-3) Producto: 8
+25> Producto: 8
 Manzana
 Precio: 10
 Ingresado el: 8/8/2001
 Fecha del envio: 1/1/2024
-
-26> La cola de envios se ha liberado exitosamente.
-27> Fin.
+26> Producto: 8
+Manzana
+Precio: 10
+Ingresado el: 8/8/2001
+Fecha del envio: 1/1/2025
+27> La cola de envios se ha liberado exitosamente.
+28> Fin.

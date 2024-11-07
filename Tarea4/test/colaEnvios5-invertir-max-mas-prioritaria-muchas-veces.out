@@ -88,89 +88,45 @@ Fecha del envio: 5/5/2022
 64> Producto agregada de forma exitosa.
 65> Envio creado con exito.
 66> Se ha agregado el envio a la cola de envios de forma exitosa.
-67> 
-Nivel 1
-1) Producto: 8
-Pasta
-Precio: 9
-Ingresado el: 8/8/2022
-Fecha del envio: 12/12/2024
-
-Nivel 2
-2) Producto: 6
-Leche
-Precio: 7
-Ingresado el: 6/6/2022
-Fecha del envio: 10/10/2022
-3) Producto: 7
-Manzanas
-Precio: 6
-Ingresado el: 7/7/2022
-Fecha del envio: 11/11/2024
-
-Nivel 3
-4) Producto: 1
-Pan
-Precio: 5
-Ingresado el: 1/1/2022
-Fecha del envio: 5/5/2022
-5) Producto: 4
-Yogurt
-Precio: 8
-Ingresado el: 4/4/2022
-Fecha del envio: 8/8/2022
-6) Producto: 2
-Queso
-Precio: 15
-Ingresado el: 2/2/2022
-Fecha del envio: 6/6/2022
-
-68> La cantidad de envios en la cola es 6
-69> Se ejecuto invertirPrioridadTColaEnvios exitosamente.
-70> El envio con mayor prioridad de la cola de envios es:
+67> La cantidad de envios en la cola es 6
+68> Se ejecuto invertirPrioridadTColaEnvios exitosamente.
+69> El envio con mayor prioridad de la cola de envios es:
 Producto: 1
 Pan
 Precio: 5
 Ingresado el: 1/1/2022
 Fecha del envio: 5/5/2022
-71> Se ejecuto invertirPrioridadTColaEnvios exitosamente.
-72> Producto: 8
+70> Se ejecuto invertirPrioridadTColaEnvios exitosamente.
+71> Producto: 8
 Pasta
 Precio: 9
 Ingresado el: 8/8/2022
 Fecha del envio: 12/12/2024
-73> La cantidad de envios en la cola es 5
-74> 
-Nivel 1
-1) Producto: 7
+72> La cantidad de envios en la cola es 5
+73> Producto: 7
 Manzanas
 Precio: 6
 Ingresado el: 7/7/2022
 Fecha del envio: 11/11/2024
-
-Nivel 2
-2) Producto: 6
+74> Producto: 6
 Leche
 Precio: 7
 Ingresado el: 6/6/2022
 Fecha del envio: 10/10/2022
-3) Producto: 2
-Queso
-Precio: 15
-Ingresado el: 2/2/2022
-Fecha del envio: 6/6/2022
-
-Nivel 3
-4) Producto: 1
-Pan
-Precio: 5
-Ingresado el: 1/1/2022
-Fecha del envio: 5/5/2022
-5) Producto: 4
+75> Producto: 4
 Yogurt
 Precio: 8
 Ingresado el: 4/4/2022
 Fecha del envio: 8/8/2022
-
-75> La cola de envios se ha liberado exitosamente.
-76> Fin.
+76> Producto: 2
+Queso
+Precio: 15
+Ingresado el: 2/2/2022
+Fecha del envio: 6/6/2022
+77> Producto: 1
+Pan
+Precio: 5
+Ingresado el: 1/1/2022
+Fecha del envio: 5/5/2022
+78> La cola de envios se ha liberado exitosamente.
+79> Fin.

@@ -19,9 +19,9 @@ agregarCarritoProductos
 crearEnvio 1/1/2024
 encolarEnvioColaEnvios
 cantidadColaEnvios
-imprimirColaEnvios
+desencolarColaEnvios
+desencolarColaEnvios
 desencolarColaEnvios
 cantidadColaEnvios
-imprimirColaEnvios
 liberarColaEnvios
 Fin

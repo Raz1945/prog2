@@ -63,81 +63,37 @@ Fecha del envio: 9/9/2022
 54> Producto agregada de forma exitosa.
 55> Envio creado con exito.
 56> Se ha agregado el envio a la cola de envios de forma exitosa.
-57> 
-Nivel 1
-1) Producto: 8
+57> La cantidad de envios en la cola es 6
+58> Producto: 8
 Pasta
 Precio: 9
 Ingresado el: 8/8/2022
 Fecha del envio: 12/12/2024
-
-Nivel 2
-2) Producto: 6
-Leche
-Precio: 7
-Ingresado el: 6/6/2022
-Fecha del envio: 10/10/2022
-3) Producto: 7
+59> Producto: 7
 Manzanas
 Precio: 6
 Ingresado el: 7/7/2022
 Fecha del envio: 11/11/2024
-
-Nivel 3
-4) Producto: 1
-Pan
-Precio: 5
-Ingresado el: 1/1/2022
-Fecha del envio: 5/5/2022
-5) Producto: 4
-Yogurt
-Precio: 8
-Ingresado el: 4/4/2022
-Fecha del envio: 8/8/2022
-6) Producto: 2
-Queso
-Precio: 15
-Ingresado el: 2/2/2022
-Fecha del envio: 6/6/2022
-
-58> La cantidad de envios en la cola es 6
-59> Producto: 8
-Pasta
-Precio: 9
-Ingresado el: 8/8/2022
-Fecha del envio: 12/12/2024
-60> La cantidad de envios en la cola es 5
-61> 
-Nivel 1
-1) Producto: 7
-Manzanas
-Precio: 6
-Ingresado el: 7/7/2022
-Fecha del envio: 11/11/2024
-
-Nivel 2
-2) Producto: 6
+60> Producto: 6
 Leche
 Precio: 7
 Ingresado el: 6/6/2022
 Fecha del envio: 10/10/2022
-3) Producto: 2
-Queso
-Precio: 15
-Ingresado el: 2/2/2022
-Fecha del envio: 6/6/2022
-
-Nivel 3
-4) Producto: 1
-Pan
-Precio: 5
-Ingresado el: 1/1/2022
-Fecha del envio: 5/5/2022
-5) Producto: 4
+61> Producto: 4
 Yogurt
 Precio: 8
 Ingresado el: 4/4/2022
 Fecha del envio: 8/8/2022
-
-62> La cola de envios se ha liberado exitosamente.
-63> Fin.
+62> Producto: 2
+Queso
+Precio: 15
+Ingresado el: 2/2/2022
+Fecha del envio: 6/6/2022
+63> Producto: 1
+Pan
+Precio: 5
+Ingresado el: 1/1/2022
+Fecha del envio: 5/5/2022
+64> La cantidad de envios en la cola es 0
+65> La cola de envios se ha liberado exitosamente.
+66> Fin.

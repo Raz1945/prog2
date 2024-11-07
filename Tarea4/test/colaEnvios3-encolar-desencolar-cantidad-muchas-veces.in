@@ -54,10 +54,13 @@ crearProducto 8 Pasta 9
 agregarCarritoProductos
 crearEnvio 12/12/2024
 encolarEnvioColaEnvios
-imprimirColaEnvios
 cantidadColaEnvios
 desencolarColaEnvios
+desencolarColaEnvios
+desencolarColaEnvios
+desencolarColaEnvios
+desencolarColaEnvios
+desencolarColaEnvios
 cantidadColaEnvios
-imprimirColaEnvios
 liberarColaEnvios
 Fin
