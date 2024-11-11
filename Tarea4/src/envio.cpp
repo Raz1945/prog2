@@ -4,7 +4,6 @@ struct rep_envio {
   TCarritoProductos carrito;
   TFecha fecha;
   rep_envio* sig;
-
 };
 
 TEnvio crearTEnvio(TCarritoProductos carrito, TFecha fecha) {
