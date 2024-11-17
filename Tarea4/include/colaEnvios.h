@@ -30,7 +30,7 @@ void encolarEnvioTColaEnvios(TColaEnvios &colaEnvios, TEnvio envio);
 // La función es O(1) en el peor caso.
 int cantidadTColaEnvios(TColaEnvios colaEnvios);
 
-// Imprime los envíos dentro de la cola con el formato:
+  // Imprime los envíos dentro de la cola con el formato:
 // Nivel 1:
 // 1) <Envio 1>
 // ...
