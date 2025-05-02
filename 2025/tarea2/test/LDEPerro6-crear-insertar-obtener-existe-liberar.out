@@ -1,0 +1,36 @@
+1>2>#  Creo e inserto el perro 1.
+3>4>5>6>Perro en la posicion 1:
+Perro 1
+Nombre: Volta
+Edad: 4
+Descripcion:  : Labrador Retriever, energético y juguetón, pelaje marrón claro
+Fecha de ingreso: 8/9/2021
+Vitalidad: 10
+7>El perro de id 2 NO pertenece a la lista.
+8>#  Creo e inserto el perro 2.
+9>10>11>12>#  Creo e inserto el perro 3.
+13>14>15>16>#  Creo e inserto el perro 4.
+17>18>19>20>Perro en la posicion 4:
+Perro 2
+Nombre: Titan
+Edad: 8
+Descripcion:  Un Chihuahua valiente y protector con una gran personalidad en un cuerpo pequeño
+Fecha de ingreso: 22/10/2022
+Vitalidad: 7
+21>Perro en la posicion 2:
+Perro 1
+Nombre: Volta
+Edad: 4
+Descripcion:  : Labrador Retriever, energético y juguetón, pelaje marrón claro
+Fecha de ingreso: 8/9/2021
+Vitalidad: 10
+22>Perro en la posicion 1:
+Perro 4
+Nombre: Turing
+Edad: 3
+Descripcion:  Un Bulldog Inglés tranquilo y cariñoso que disfruta de largas siestas y abrazos
+Fecha de ingreso: 1/2/2008
+Vitalidad: 9
+23>El perro de id 2 pertenece a la lista.
+24>El perro de id 4 pertenece a la lista.
+25>26>Fin.

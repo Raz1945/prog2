@@ -1,0 +1,34 @@
+crearABBPersonasVacio
+crearPersona 7 Arturo Alvarez 10 03 1970
+insertarPersonaABBPersonas
+maxCIPersonaABBPersonas
+crearPersona 21 Beatriz Baez 25 07 1985
+insertarPersonaABBPersonas
+maxCIPersonaABBPersonas
+crearPersona 15 Carmen Cardozo 30 11 1972
+insertarPersonaABBPersonas
+maxCIPersonaABBPersonas
+crearPersona 40 Daniel Diaz 05 01 1988
+insertarPersonaABBPersonas
+maxCIPersonaABBPersonas
+removerPersonaABBPersonas 21
+maxCIPersonaABBPersonas
+removerPersonaABBPersonas 40
+maxCIPersonaABBPersonas
+crearPersona 40 Daniel Diaz 05 01 1988
+insertarPersonaABBPersonas
+crearPersona 21 Beatriz Baez 25 07 1985
+insertarPersonaABBPersonas
+crearPersona 25 Carmen Cardozo 30 11 1972
+insertarPersonaABBPersonas
+maxCIPersonaABBPersonas
+crearPersona 45 Eugenia Estevez 17 08 1994
+insertarPersonaABBPersonas
+imprimirABBPersonas
+maxCIPersonaABBPersonas
+removerPersonaABBPersonas 40
+imprimirABBPersonas
+removerPersonaABBPersonas 25
+imprimirABBPersonas
+liberarABBPersonas
+Fin

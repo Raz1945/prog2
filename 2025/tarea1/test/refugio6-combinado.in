@@ -1,0 +1,63 @@
+crearRefugio
+
+# se crean 10 Perros para ingresarlos a la Refugio
+
+crearFecha 18/12/2020
+crearPerro 1 Daisy 5 9 Beagle curiosa y aventurera que siempre sigue su olfato a nuevas experiencias
+agregarEnRefugio
+
+crearFecha 10/04/2015
+crearPerro 2 Bobby 9 5 Schnauzer anciano pero sabio que disfruta de la tranquilidad y los paseos cortos
+agregarEnRefugio
+
+crearFecha 03/08/2021
+crearPerro 3 Milo 4 10 Dálmata enérgico con un amor por correr y jugar con otros perros
+agregarEnRefugio
+
+crearFecha 27/09/2020
+crearPerro 4 Chloe 5 6 Pomerania esponjosa que adora ser el centro de atención
+agregarEnRefugio
+
+crearFecha 17/07/2021
+crearPerro 5 Zeus 4 8 Pastor alemán valiente y bien entrenado que trabaja como perro guardián
+agregarEnRefugio
+
+crearFecha 09/03/2023
+crearPerro 6 Lola 2 7 Shih tzu consentida que ama estar en brazos y recibir mimos
+agregarEnRefugio
+
+crearFecha 17/07/2021
+crearPerro 7 Bruno 5 9 Boxer juguetón que nunca se cansa de saltar y hacer travesuras
+agregarEnRefugio
+
+crearFecha 06/01/2020
+crearPerro 8 Maya 4 6 Akita inu independiente pero muy leal
+agregarEnRefugio
+
+crearFecha 13/09/2015
+crearPerro 9 Canela 9 5 Mestiza dulce y tranquila que disfruta de las siestas al sol
+agregarEnRefugio
+
+crearFecha 11/11/2022
+crearPerro 10 Otto 3 7 San Bernardo gigante pero bonachón que adora la nieve y los abrazos
+agregarEnRefugio
+
+imprimirRefugio
+
+removerDeRefugio 8
+removerDeRefugio 10
+removerDeRefugio 4
+
+imprimirRefugio
+
+# Hay dos Perros fecha
+
+ingresaronPerrosFechaRefugio 17/7/2021
+
+# No hay Perros fecha
+
+ingresaronPerrosFechaRefugio 15/2/2023
+
+liberarRefugio
+
+Fin

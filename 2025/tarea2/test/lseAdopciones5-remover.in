@@ -1,0 +1,130 @@
+crearLSEAdopcionesVacia
+
+# no existe
+existeAdopcionLSEAdopciones 12345678 1
+
+# ---------------------------------------------------------------------
+# inserta primer elemento
+crearFecha 18/08/1930
+crearPerro 1 Pluto 6 8 Perrito simpaticon
+crearPersona 12345678 Mickey Mouse 18 11 1928
+agregarPerroPersona
+crearFecha 2/1/2025
+insertarLSEAdopciones   
+
+# ---------------------------------------------------------------------
+# existe
+existeAdopcionLSEAdopciones 12345678 1
+
+# ---------------------------------------------------------------------
+# remover unico elemento
+removerAdopcionLSEAdopciones 12345678 1
+
+# ---------------------------------------------------------------------
+# no existe
+existeAdopcionLSEAdopciones 12345678 1
+
+# ---------------------------------------------------------------------
+# inserta primer elemento
+crearFecha 18/08/1930
+crearPerro 1 Pluto 6 8 Perrito simpaticon
+crearPersona 12345678 Mickey Mouse 18 11 1928
+agregarPerroPersona
+crearFecha 2/1/2025
+insertarLSEAdopciones   
+
+# 
+# inserta al final
+crearFecha 04/10/1950
+crearPerro 3 Snoopy 5 7 Perrito campechano
+crearPersona 34567890 Charlie Brown 30 10 1950
+agregarPerroPersona
+crearFecha 4/1/2025
+insertarLSEAdopciones   
+
+# 
+# inserta al principio
+crearFecha 13/09/1969
+crearPerro 2 Scooby 3 9 Perrito detective
+crearPersona 23456789 Shaggy Rogers 25 02 1998
+agregarPerroPersona
+crearFecha 1/1/2025
+insertarLSEAdopciones  
+
+# 
+# existen todas
+existeAdopcionLSEAdopciones 12345678 1
+existeAdopcionLSEAdopciones 34567890 3
+existeAdopcionLSEAdopciones 23456789 2
+
+# 
+# remover del inicio
+removerAdopcionLSEAdopciones 23456789 2
+
+# 
+# no existe
+existeAdopcionLSEAdopciones 23456789 2
+
+# 
+# remover del final
+removerAdopcionLSEAdopciones 34567890 3
+
+# 
+# no existe
+existeAdopcionLSEAdopciones 34567890 3
+
+# 
+# existe
+existeAdopcionLSEAdopciones 12345678 1
+
+# 
+# inserta al final
+crearFecha 04/10/1950
+crearPerro 3 Snoopy 5 7 Perrito campechano
+crearPersona 34567890 Charlie Brown 30 10 1950
+agregarPerroPersona
+crearFecha 4/1/2025
+insertarLSEAdopciones   
+
+# 
+# inserta al principio
+crearFecha 13/09/1969
+crearPerro 2 Scooby 3 9 Perrito detective
+crearPersona 23456789 Shaggy Rogers 25 02 1998
+agregarPerroPersona
+crearFecha 1/1/2025
+insertarLSEAdopciones  
+
+# 
+# empate de fechas en el medio
+crearFecha 22/06/1955
+crearPerro 5 Reina 7 8 Perrita dama
+crearPersona 56789012 Jim Dear 10 03 1927
+agregarPerroPersona
+liberarPerro
+crearFecha 22/06/1955
+crearPerro 6 Golfo 8 4 Perrito vagabundo
+agregarPerroPersona
+crearFecha 2/1/2025
+insertarLSEAdopciones   
+
+# 
+# existe
+existeAdopcionLSEAdopciones 56789012 6
+
+# 
+# remover del medio
+removerAdopcionLSEAdopciones 12345678 1
+
+# 
+# no existe 
+existeAdopcionLSEAdopciones 12345678 1
+
+# 
+# existen todas
+existeAdopcionLSEAdopciones 23456789 2
+existeAdopcionLSEAdopciones 34567890 3
+existeAdopcionLSEAdopciones 56789012 6
+
+liberarLSEAdopciones
+Fin

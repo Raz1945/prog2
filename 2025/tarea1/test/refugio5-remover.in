@@ -1,0 +1,41 @@
+crearRefugio
+
+# se crean 5 perros para ingresarlos al refugio
+
+crearFecha 18/1/2023
+crearPerro 1 Thor 4 7 Un pastor aleman leal y protector, perfecto para cuidar el hogar 
+agregarEnRefugio
+
+crearFecha 15/6/2020
+crearPerro 2 Max 4 9 Labrador jugueton y amigable que ama nadar y buscar pelotas
+agregarEnRefugio
+
+crearFecha 12/11/2019
+crearPerro 3 Bella 6 9 Border collie muy inteligente que siempre esta lista para aprender nuevos trucos
+agregarEnRefugio
+
+crearFecha 30/03/2017
+crearPerro 4 Simba 7 8 Golden retriever amoroso que disfruta pasear por el parque y recibir caricias
+agregarEnRefugio
+
+crearFecha 20/07/2022
+crearPerro 5 Nina 3 7 Chihuahua pequeña pero valiente, que ladra a todo lo que se mueve
+agregarEnRefugio
+
+imprimirRefugio
+
+removerDeRefugio 2
+
+imprimirRefugio
+
+removerDeRefugio 5
+
+imprimirRefugio
+
+removerDeRefugio 1
+
+imprimirRefugio
+
+liberarRefugio
+
+Fin

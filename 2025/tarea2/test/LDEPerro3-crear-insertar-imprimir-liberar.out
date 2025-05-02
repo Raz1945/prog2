@@ -1,0 +1,30 @@
+1>2>#  Creo e inserto el perro 1.
+3>4>5>6>#  Creo e inserto el perro 2.
+7>8>9>10>#  Creo e inserto el perro 3.
+11>12>13>14>#  Creo e inserto el perro 4.
+15>16>17>18>LDE Perros:
+Perro 4
+Nombre: Turing
+Edad: 4
+Descripcion:  Un Bulldog Inglés tranquilo y cariñoso que disfruta de largas siestas y abrazos
+Fecha de ingreso: 10/12/2000
+Vitalidad: 9
+Perro 3
+Nombre: Ampere
+Edad: 4
+Descripcion:  Un Boxer curioso y determinado, siempre explorando y metiéndose en pequeñas travesuras
+Fecha de ingreso: 14/1/2010
+Vitalidad: 5
+Perro 2
+Nombre: Titan
+Edad: 4
+Descripcion:  Un Chihuahua valiente y protector con una gran personalidad en un cuerpo pequeño
+Fecha de ingreso: 22/10/2022
+Vitalidad: 7
+Perro 1
+Nombre: Volta
+Edad: 4
+Descripcion:  : Labrador Retriever, energético y juguetón, pelaje marrón claro
+Fecha de ingreso: 9/4/2011
+Vitalidad: 10
+19>20>Fin.

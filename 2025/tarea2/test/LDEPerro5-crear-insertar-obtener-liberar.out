@@ -1,0 +1,28 @@
+1>2>No se puede obtener el primero de la LDE de perros porque es vacia
+3>No se puede obtener el ultimo de la LDE de perros porque es vacia
+4>#  Creo e inserto el perro 1.
+5>6>7>8>Ultimo perro:
+Perro 1
+Nombre: Volta
+Edad: 4
+Descripcion:  : Labrador Retriever, energético y juguetón, pelaje marrón claro
+Fecha de ingreso: 8/9/2021
+Vitalidad: 10
+9>#  Creo e inserto el perro 2.
+10>11>12>13>#  Creo e inserto el perro 3.
+14>15>16>17>#  Creo e inserto el perro 4.
+18>19>20>21>Primer perro:
+Perro 4
+Nombre: Turing
+Edad: 3
+Descripcion:  Un Bulldog Inglés tranquilo y cariñoso que disfruta de largas siestas y abrazos
+Fecha de ingreso: 1/2/2008
+Vitalidad: 9
+22>Ultimo perro:
+Perro 2
+Nombre: Titan
+Edad: 8
+Descripcion:  Un Chihuahua valiente y protector con una gran personalidad en un cuerpo pequeño
+Fecha de ingreso: 22/10/2022
+Vitalidad: 7
+23>24>Fin.

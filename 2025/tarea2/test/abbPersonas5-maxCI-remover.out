@@ -1,0 +1,73 @@
+1>2>3>4>La mayor cedula en el arbol es 7.
+5>6>7>La mayor cedula en el arbol es 21.
+8>9>10>La mayor cedula en el arbol es 21.
+11>12>13>La mayor cedula en el arbol es 40.
+14>La persona con id 21 se removio del arbol.
+15>La mayor cedula en el arbol es 40.
+16>La persona con id 40 se removio del arbol.
+17>La mayor cedula en el arbol es 15.
+18>19>20>21>22>23>24>La mayor cedula en el arbol es 40.
+25>26>27>Persona Arturo Alvarez
+CI: 7
+Fecha de Nacimiento: 10/3/1970
+Perros adoptados:
+Persona Carmen Cardozo
+CI: 15
+Fecha de Nacimiento: 30/11/1972
+Perros adoptados:
+Persona Beatriz Baez
+CI: 21
+Fecha de Nacimiento: 25/7/1985
+Perros adoptados:
+Persona Carmen Cardozo
+CI: 25
+Fecha de Nacimiento: 30/11/1972
+Perros adoptados:
+Persona Daniel Diaz
+CI: 40
+Fecha de Nacimiento: 5/1/1988
+Perros adoptados:
+Persona Eugenia Estevez
+CI: 45
+Fecha de Nacimiento: 17/8/1994
+Perros adoptados:
+28>La mayor cedula en el arbol es 45.
+29>La persona con id 40 se removio del arbol.
+30>Persona Arturo Alvarez
+CI: 7
+Fecha de Nacimiento: 10/3/1970
+Perros adoptados:
+Persona Carmen Cardozo
+CI: 15
+Fecha de Nacimiento: 30/11/1972
+Perros adoptados:
+Persona Beatriz Baez
+CI: 21
+Fecha de Nacimiento: 25/7/1985
+Perros adoptados:
+Persona Carmen Cardozo
+CI: 25
+Fecha de Nacimiento: 30/11/1972
+Perros adoptados:
+Persona Eugenia Estevez
+CI: 45
+Fecha de Nacimiento: 17/8/1994
+Perros adoptados:
+31>La persona con id 25 se removio del arbol.
+32>Persona Arturo Alvarez
+CI: 7
+Fecha de Nacimiento: 10/3/1970
+Perros adoptados:
+Persona Carmen Cardozo
+CI: 15
+Fecha de Nacimiento: 30/11/1972
+Perros adoptados:
+Persona Beatriz Baez
+CI: 21
+Fecha de Nacimiento: 25/7/1985
+Perros adoptados:
+Persona Eugenia Estevez
+CI: 45
+Fecha de Nacimiento: 17/8/1994
+Perros adoptados:
+33>34>Fin.

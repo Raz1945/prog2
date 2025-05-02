@@ -1,0 +1,6 @@
+2267adb214a89bced5c86bd69f2356d94667621c  src/fecha.cpp
+f7d4f6fe88b5002c9859a04b1d152d00ee38d4c4  src/perro.cpp
+31393f04b5a781da641114391725dbed6e3ad2d9  src/persona.cpp
+3f459bcd3153779ca936a18b19366906202bb794  src/lseAdopciones.cpp
+da5963fe0bd7a44fbb0dbc2d57ac3642f87e2735  src/ldePerros.cpp
+2357f05cc42cc5adbbd1748c94d39e7d6922dfc0  src/abbPersonas.cpp

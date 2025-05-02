@@ -1,0 +1,35 @@
+1>2>Persona Pedrinho Alfonsinho
+CI: 12345678
+Fecha de Nacimiento: 4/6/2000
+Perros adoptados:
+3>La persona tiene 0 perro/s.
+4>El perro con id 1 NO pertenece a la persona.
+5>6>7>8>9>La persona tiene 1 perro/s.
+10>El perro con id 2 NO pertenece a la persona.
+11>12>13>14>15>16>17>18>19>La persona tiene 3 perro/s.
+20>El perro con id 4 pertenece a la persona.
+21>El perro con id 8 pertenece a la persona.
+22>El perro con id 3 NO pertenece a la persona.
+23>Persona Pedrinho Alfonsinho
+CI: 12345678
+Fecha de Nacimiento: 4/6/2000
+Perros adoptados:
+Perro 1
+Nombre: Luna
+Edad: 4
+Descripcion:  Husky siberiana enérgica con ojos azules que disfruta correr en la nieve
+Fecha de ingreso: 8/9/2021
+Vitalidad: 10
+Perro 4
+Nombre: Rex
+Edad: 10
+Descripcion:  Pastor aleman muy guardian de gran tamaño y peludo
+Fecha de ingreso: 23/11/2014
+Vitalidad: 3
+Perro 8
+Nombre: Toby
+Edad: 5
+Descripcion:  Caniche blanco con rulos cortos
+Fecha de ingreso: 18/6/2020
+Vitalidad: 8
+24>25>Fin.

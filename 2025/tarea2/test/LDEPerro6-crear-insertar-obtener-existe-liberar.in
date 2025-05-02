@@ -1,0 +1,35 @@
+crearLDEPerrosVacia
+
+# Creo e inserto el perro 1
+crearFecha 08/09/2021
+crearPerro 1 Volta 4 10 : Labrador Retriever, energético y juguetón, pelaje marrón claro
+insertarLDEPerros
+
+obtenerNesimoLDEPerros 1
+existePerroLDEPerros 2
+
+# Creo e inserto el perro 2
+crearFecha 22/10/2022
+crearPerro 2 Titan 8 7 Un Chihuahua valiente y protector con una gran personalidad en un cuerpo pequeño
+insertarLDEPerros
+
+# Creo e inserto el perro 3
+crearFecha 14/07/2018
+crearPerro 3 Ampere 7 5 Un Boxer curioso y determinado, siempre explorando y metiéndose en pequeñas travesuras
+insertarLDEPerros
+
+# Creo e inserto el perro 4
+crearFecha 01/02/2008
+crearPerro 4 Turing 3 9 Un Bulldog Inglés tranquilo y cariñoso que disfruta de largas siestas y abrazos
+insertarLDEPerros
+
+obtenerNesimoLDEPerros 4
+obtenerNesimoLDEPerros 2
+obtenerNesimoLDEPerros 1
+
+existePerroLDEPerros 2
+existePerroLDEPerros 4
+
+
+liberarLDEPerros
+Fin

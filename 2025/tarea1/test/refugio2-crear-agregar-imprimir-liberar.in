@@ -1,0 +1,23 @@
+crearRefugio
+
+# creo cuatro perros para ingresarlos al refugio
+
+crearFecha 12/3/2018
+crearPerro 1 Pancho 4 9 Gris a manchas, grande 
+agregarEnRefugio
+
+crearFecha 15/4/2020
+crearPerro 2 Luna 2 10 Blanco y negro, mediano
+agregarEnRefugio
+
+crearFecha 4/6/2019
+crearPerro 3 Clara 7 8 Beige, chico 
+agregarEnRefugio
+
+crearFecha 1/4/2019
+crearPerro 4 Coco 3 9 Blanco, chico 
+agregarEnRefugio
+
+imprimirRefugio
+liberarRefugio
+Fin

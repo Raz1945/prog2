@@ -1,0 +1,33 @@
+1>2>#  no existe.
+3>NO Existe una adopcion de la persona de CI 12345678 al perro 1 en la lista.
+4>#  inserta primer elemento.
+5>6>7>8>9>10>Adopcion de persona de CI 12345678 y perro de id 1 agregada de forma exitosa.
+11>#  existe.
+12>Existe una adopcion de la persona de CI 12345678 al perro 1 en la lista.
+13>#  inserta al final.
+14>15>16>17>18>19>Adopcion de persona de CI 34567890 y perro de id 3 agregada de forma exitosa.
+20>#  existen ambas.
+21>Existe una adopcion de la persona de CI 12345678 al perro 1 en la lista.
+22>Existe una adopcion de la persona de CI 34567890 al perro 3 en la lista.
+23>#  no existen.
+24>NO Existe una adopcion de la persona de CI 12345678 al perro 5 en la lista.
+25>NO Existe una adopcion de la persona de CI 56789012 al perro 1 en la lista.
+26>#  inserta al principio.
+27>28>29>30>31>32>Adopcion de persona de CI 23456789 y perro de id 2 agregada de forma exitosa.
+33>#  existen todas.
+34>Existe una adopcion de la persona de CI 12345678 al perro 1 en la lista.
+35>Existe una adopcion de la persona de CI 34567890 al perro 3 en la lista.
+36>Existe una adopcion de la persona de CI 23456789 al perro 2 en la lista.
+37>#  no existen.
+38>NO Existe una adopcion de la persona de CI 12345678 al perro 3 en la lista.
+39>NO Existe una adopcion de la persona de CI 23456789 al perro 1 en la lista.
+40>#  empate de fechas en el medio.
+41>42>43>44>45>46>47>48>49>50>Adopcion de persona de CI 56789012 y perro de id 6 agregada de forma exitosa.
+51>#  existen todas.
+52>Existe una adopcion de la persona de CI 12345678 al perro 1 en la lista.
+53>Existe una adopcion de la persona de CI 34567890 al perro 3 en la lista.
+54>Existe una adopcion de la persona de CI 23456789 al perro 2 en la lista.
+55>Existe una adopcion de la persona de CI 56789012 al perro 6 en la lista.
+56>#  no existe .
+57>NO Existe una adopcion de la persona de CI 56789012 al perro 5 en la lista.
+58>59>Fin.

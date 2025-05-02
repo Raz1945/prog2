@@ -7,8 +7,6 @@ echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
 valgrind ./principal
 
 
-# Funcion
-
-Tengo que agregar el **producto** a una _lista de promociones_, la cual puede pertenecer a una de las siguientes **historiales** finalizadas, activas o futuras
-
-1. Antes de agregar el producto tengo que encontrar la lista
+# Test propio
+./principal < test/propio.in > test/salidas/popio.sal
+diff test/propio.out test/salidas/popio.sal

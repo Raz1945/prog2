@@ -1,0 +1,140 @@
+1>2>3>4>5>6>7>Adopcion de persona de CI 12345678 y perro de id 1 agregada de forma exitosa.
+8>9>10>11>12>13>Adopcion de persona de CI 23456789 y perro de id 2 agregada de forma exitosa.
+14>15>16>17>18>19>Adopcion de persona de CI 34567890 y perro de id 3 agregada de forma exitosa.
+20>21>22>23>24>25>Adopcion de persona de CI 45678901 y perro de id 4 agregada de forma exitosa.
+26>27>28>29>30>31>32>33>34>35>Adopcion de persona de CI 56789012 y perro de id 6 agregada de forma exitosa.
+36>37>38>39>40>41>42>43>44>45>Adopcion de persona de CI 56789012 y perro de id 5 agregada de forma exitosa.
+46>Lista de adopciones:
+---------------------------
+Adopcion en fecha 1/1/2025
+Adoptante:
+Persona Shaggy Rogers
+CI: 23456789
+Adoptado:
+Perro 2
+Nombre: Scooby
+Fecha de ingreso: 13/9/1969
+---------------------------
+---------------------------
+Adopcion en fecha 2/1/2025
+Adoptante:
+Persona Mickey Mouse
+CI: 12345678
+Adoptado:
+Perro 1
+Nombre: Pluto
+Fecha de ingreso: 18/8/1930
+---------------------------
+---------------------------
+Adopcion en fecha 3/1/2025
+Adoptante:
+Persona Jon Snow
+CI: 45678901
+Adoptado:
+Perro 4
+Nombre: Fantasma
+Fecha de ingreso: 17/4/2011
+---------------------------
+---------------------------
+Adopcion en fecha 3/1/2025
+Adoptante:
+Persona Jim Dear
+CI: 56789012
+Adoptado:
+Perro 6
+Nombre: Golfo
+Fecha de ingreso: 22/6/1955
+---------------------------
+---------------------------
+Adopcion en fecha 3/1/2025
+Adoptante:
+Persona Jim Dear
+CI: 56789012
+Adoptado:
+Perro 5
+Nombre: Reina
+Fecha de ingreso: 22/6/1955
+---------------------------
+---------------------------
+Adopcion en fecha 4/1/2025
+Adoptante:
+Persona Charlie Brown
+CI: 34567890
+Adoptado:
+Perro 3
+Nombre: Snoopy
+Fecha de ingreso: 4/10/1950
+---------------------------
+Fin lista de adopciones.
+47>Adopcion de la persona de CI 12345678 al perro 1 removida de la lista.
+48>Adopcion de la persona de CI 56789012 al perro 6 removida de la lista.
+49>La lista de adopciones NO es vacia.
+50>51>52>53>54>55>Adopcion de persona de CI 67890123 y perro de id 7 agregada de forma exitosa.
+56>57>58>59>60>61>Adopcion de persona de CI 78901234 y perro de id 8 agregada de forma exitosa.
+62>NO Existe una adopcion de la persona de CI 56789012 al perro 6 en la lista.
+63>Existe una adopcion de la persona de CI 56789012 al perro 5 en la lista.
+64>Existe una adopcion de la persona de CI 67890123 al perro 7 en la lista.
+65>La lista de adopciones NO es vacia.
+66>Lista de adopciones:
+---------------------------
+Adopcion en fecha 1/1/2025
+Adoptante:
+Persona Shaggy Rogers
+CI: 23456789
+Adoptado:
+Perro 2
+Nombre: Scooby
+Fecha de ingreso: 13/9/1969
+---------------------------
+---------------------------
+Adopcion en fecha 1/1/2025
+Adoptante:
+Persona Rubeus Hagrid
+CI: 67890123
+Adoptado:
+Perro 7
+Nombre: Fang
+Fecha de ingreso: 16/11/2001
+---------------------------
+---------------------------
+Adopcion en fecha 3/1/2025
+Adoptante:
+Persona Jon Snow
+CI: 45678901
+Adoptado:
+Perro 4
+Nombre: Fantasma
+Fecha de ingreso: 17/4/2011
+---------------------------
+---------------------------
+Adopcion en fecha 3/1/2025
+Adoptante:
+Persona Jim Dear
+CI: 56789012
+Adoptado:
+Perro 5
+Nombre: Reina
+Fecha de ingreso: 22/6/1955
+---------------------------
+---------------------------
+Adopcion en fecha 4/1/2025
+Adoptante:
+Persona Charlie Brown
+CI: 34567890
+Adoptado:
+Perro 3
+Nombre: Snoopy
+Fecha de ingreso: 4/10/1950
+---------------------------
+---------------------------
+Adopcion en fecha 4/1/2025
+Adoptante:
+Persona Penny Forrester
+CI: 78901234
+Adoptado:
+Perro 8
+Nombre: Bolt
+Fecha de ingreso: 21/11/2008
+---------------------------
+Fin lista de adopciones.
+67>68>Fin.

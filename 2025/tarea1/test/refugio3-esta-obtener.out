@@ -1,0 +1,13 @@
+1>2>#  creo cuatro perros para ingresarlos al refugio .
+3>4>5>6>7>8>9>10>11>12>13>14>15>#  chequéo si existen diferentes ids de perros y los obtengo.
+16>El perro con id 5 NO esta en el refugio.
+17>El perro con id 2 esta en el refugio.
+18>El perro con id 3 esta en el refugio.
+19>El perro con id 0 NO esta en el refugio.
+20>Perro 2
+Nombre: Tito
+Edad: 12
+Descripcion:  Blanco, chico
+Fecha de ingreso: 7/7/2020
+Vitalidad: 3
+21>22>Fin.

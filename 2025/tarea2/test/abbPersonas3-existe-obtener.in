@@ -1,0 +1,29 @@
+crearABBPersonasVacio
+
+crearPersona 10 Arturo Alvarez 10 03 1970
+insertarPersonaABBPersonas
+obtenerPersonaABBPersonas 10
+
+crearPersona 5 Beatriz Baez 25 07 1985
+insertarPersonaABBPersonas
+
+crearPersona 3 Carmen Cardozo 30 11 1972
+insertarPersonaABBPersonas
+
+crearPersona 2 Daniel Diaz 05 01 1988
+insertarPersonaABBPersonas
+
+existePersonaABBPersonas 10
+existePersonaABBPersonas 1
+existePersonaABBPersonas 2
+existePersonaABBPersonas 4
+existePersonaABBPersonas 5
+existePersonaABBPersonas 7
+
+obtenerPersonaABBPersonas 5
+obtenerPersonaABBPersonas 3
+obtenerPersonaABBPersonas 10
+obtenerPersonaABBPersonas 2
+
+liberarABBPersonas
+Fin

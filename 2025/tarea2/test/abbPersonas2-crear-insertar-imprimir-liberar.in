@@ -1,0 +1,52 @@
+crearABBPersonasVacio
+
+crearABBPersonasVacio
+imprimirABBPersonas
+liberarABBPersonas
+
+crearABBPersonasVacio
+
+crearPersona 4 Arturo Alvarez 10 03 1970
+insertarPersonaABBPersonas
+
+crearPersona 10 Beatriz Baez 25 07 1985
+insertarPersonaABBPersonas
+
+crearPersona 5 Carmen Cardozo 30 11 1972
+insertarPersonaABBPersonas
+
+crearPersona 1 Daniel Diaz 05 01 1988
+insertarPersonaABBPersonas
+
+imprimirABBPersonas
+
+# -----------------------------
+
+crearPersona 11 Eugenia Estevez 17 08 1994
+insertarPersonaABBPersonas
+
+crearPersona 14 Fabiana Fernandez 24 09 1967
+insertarPersonaABBPersonas
+
+crearPersona 17 Gabriel Gomez 15 04 2002
+insertarPersonaABBPersonas
+
+crearPersona 12 Horacio Huertas 27 02 1997
+insertarPersonaABBPersonas
+
+imprimirABBPersonas
+
+# -----------------------------
+
+crearPersona 2 Isabel Iglesias 31 10 2000
+insertarPersonaABBPersonas
+
+crearPersona 3 Julio Jimenez 02 12 1962
+insertarPersonaABBPersonas
+
+imprimirABBPersonas
+
+# -----------------------------
+
+liberarABBPersonas
+Fin

@@ -1,0 +1,11 @@
+crearABBPersonasVacio
+imprimirABBPersonas
+liberarABBPersonas
+
+crearABBPersonasVacio
+crearPersona 4 Arturo Alvarez 10 03 1970
+insertarPersonaABBPersonas
+imprimirABBPersonas
+
+liberarABBPersonas
+Fin

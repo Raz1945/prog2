@@ -1,0 +1,13 @@
+crearLSEAdopcionesVacia
+imprimirLSEAdopciones
+liberarLSEAdopciones
+crearLSEAdopcionesVacia
+crearFecha 18/08/1930
+crearPerro 1 Pluto 4 8 Perrito simpaticon
+crearPersona 12345678 Mickey Mouse 18 11 1928
+agregarPerroPersona
+crearFecha 1/1/2025
+insertarLSEAdopciones
+imprimirLSEAdopciones
+liberarLSEAdopciones
+Fin

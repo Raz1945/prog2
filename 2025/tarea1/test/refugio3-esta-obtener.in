@@ -1,0 +1,31 @@
+crearRefugio
+
+# creo cuatro perros para ingresarlos al refugio 
+
+crearFecha 24/7/2020
+crearPerro 1 Nala 10 4 Beige beteado, grande
+agregarEnRefugio
+
+crearFecha 7/7/2020
+crearPerro 2 Tito 12 3 Blanco, chico
+agregarEnRefugio
+
+crearFecha 8/10/2021
+crearPerro 3 Tarzan 1 10 Marron oscuro, mediano
+agregarEnRefugio
+
+crearFecha 28/5/2018
+crearPerro 4 Paco 13 5 Gris claro, grande
+agregarEnRefugio
+
+# chequéo si existen diferentes ids de perros y los obtengo
+
+estaEnRefugio 5
+estaEnRefugio 2
+estaEnRefugio 3
+estaEnRefugio 0
+
+obtenerDeRefugio 2
+
+liberarRefugio
+Fin

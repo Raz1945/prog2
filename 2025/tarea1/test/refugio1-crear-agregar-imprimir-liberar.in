@@ -1,0 +1,10 @@
+crearRefugio
+
+# creo perro para ingresarlo al refugio
+crearFecha 22/08/2024
+crearPerro 1 Toby 2 10 Macho
+
+agregarEnRefugio
+imprimirRefugio
+liberarRefugio
+Fin

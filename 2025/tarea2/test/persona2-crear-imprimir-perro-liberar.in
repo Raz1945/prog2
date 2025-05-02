@@ -1,0 +1,33 @@
+crearPersona 12345678 Pedrinho Alfonsinho 4 6 2000
+
+imprimirPersona
+
+cantidadPerrosPersona
+pertenecePerroPersona 1
+
+crearFecha 08/09/2021
+crearPerro 1 Luna 4 10 Husky siberiana enérgica con ojos azules que disfruta correr en la nieve
+agregarPerroPersona
+liberarPerro
+
+cantidadPerrosPersona
+pertenecePerroPersona 2
+
+crearFecha 23/11/2014
+crearPerro 4 Rex 10 3 Pastor aleman muy guardian de gran tamaño y peludo
+agregarPerroPersona
+liberarPerro
+
+crearFecha 18/06/2020
+crearPerro 8 Toby 5 8 Caniche blanco con rulos cortos
+agregarPerroPersona
+liberarPerro
+
+cantidadPerrosPersona
+pertenecePerroPersona 4
+pertenecePerroPersona 8
+pertenecePerroPersona 3
+
+imprimirPersona
+liberarPersona
+Fin

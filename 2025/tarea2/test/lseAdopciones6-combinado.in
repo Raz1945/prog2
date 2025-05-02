@@ -1,0 +1,79 @@
+crearLSEAdopcionesVacia
+
+crearFecha 18/08/1930
+crearPerro 1 Pluto 6 8 Perrito simpaticon
+crearPersona 12345678 Mickey Mouse 18 11 1928
+agregarPerroPersona
+crearFecha 2/1/2025
+insertarLSEAdopciones 
+
+crearFecha 13/09/1969
+crearPerro 2 Scooby 3 9 Perrito detective
+crearPersona 23456789 Shaggy Rogers 25 02 1998
+agregarPerroPersona
+crearFecha 1/1/2025
+insertarLSEAdopciones
+
+crearFecha 04/10/1950
+crearPerro 3 Snoopy 5 7 Perrito campechano
+crearPersona 34567890 Charlie Brown 30 10 1950
+agregarPerroPersona
+crearFecha 4/1/2025
+insertarLSEAdopciones
+
+crearFecha 17/04/2011
+crearPerro 4 Fantasma 2 3 Perrito blanco
+crearPersona 45678901 Jon Snow 26 12 1986
+agregarPerroPersona
+crearFecha 3/1/2025
+insertarLSEAdopciones
+
+crearFecha 22/06/1955
+crearPerro 5 Reina 7 8 Perrita dama
+crearPersona 56789012 Jim Dear 10 03 1927
+agregarPerroPersona
+liberarPerro
+crearFecha 22/06/1955
+crearPerro 6 Golfo 8 4 Perrito vagabundo
+agregarPerroPersona
+crearFecha 3/1/2025
+insertarLSEAdopciones
+
+crearFecha 22/06/1955
+crearPerro 6 Golfo 8 4 Perrito vagabundo
+crearPersona 56789012 Jim Dear 10 03 1927
+agregarPerroPersona
+liberarPerro
+crearFecha 22/06/1955
+crearPerro 5 Reina 7 8 Perrita dama
+agregarPerroPersona
+crearFecha 3/1/2025
+insertarLSEAdopciones   
+imprimirLSEAdopciones
+
+removerAdopcionLSEAdopciones 12345678 1
+removerAdopcionLSEAdopciones 56789012 6
+esVaciaLSEAdopciones
+
+crearFecha 16/11/2001
+crearPerro 7 Fang 2 3 Perrito guardian
+crearPersona 67890123 Rubeus Hagrid 06 12 1928
+agregarPerroPersona
+crearFecha 1/1/2025
+insertarLSEAdopciones
+
+crearFecha 21/11/2008
+crearPerro 8 Bolt 4 8 Perrito rapido
+crearPersona 78901234 Penny Forrester 20 01 2001
+agregarPerroPersona
+crearFecha 4/1/2025
+insertarLSEAdopciones
+
+existeAdopcionLSEAdopciones 56789012 6
+existeAdopcionLSEAdopciones 56789012 5
+existeAdopcionLSEAdopciones 67890123 7
+
+esVaciaLSEAdopciones
+imprimirLSEAdopciones
+liberarLSEAdopciones
+Fin

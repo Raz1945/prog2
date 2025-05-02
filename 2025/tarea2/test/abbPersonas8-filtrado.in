@@ -1,0 +1,38 @@
+crearABBPersonasVacio
+
+filtradoPorFechaDeNacimientoABBPersonas 1/1/2025 1
+
+crearPersona 15 Arturo Alvarez 10 03 1970
+insertarPersonaABBPersonas
+
+filtradoPorFechaDeNacimientoABBPersonas 10/03/1970 1
+filtradoPorFechaDeNacimientoABBPersonas 10/03/1970 0
+filtradoPorFechaDeNacimientoABBPersonas 10/03/1970 -1
+filtradoPorFechaDeNacimientoABBPersonas 10/04/1970 -1
+
+crearPersona 10 Beatriz Baez 25 07 1985
+insertarPersonaABBPersonas
+
+crearPersona 5 Carmen Cardozo 30 11 1972
+insertarPersonaABBPersonas
+
+crearPersona 1 Daniel Diaz 05 01 1988
+insertarPersonaABBPersonas
+
+crearPersona 11 Eugenia Estevez 30 11 1972
+insertarPersonaABBPersonas
+
+# 2 elementos
+filtradoPorFechaDeNacimientoABBPersonas 30/11/1972 1
+
+# 2 elementos
+filtradoPorFechaDeNacimientoABBPersonas 30/11/1972 0
+
+# 4 elementos
+filtradoPorFechaDeNacimientoABBPersonas 29/11/1972 1
+
+# 5 elementos
+filtradoPorFechaDeNacimientoABBPersonas 01/01/2000 -1
+
+liberarABBPersonas
+Fin

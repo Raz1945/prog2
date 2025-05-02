@@ -1,0 +1,10 @@
+crearFecha 05/10/2022
+crearPerro 1 Kim 3 8 Husky siberiana enérgica con ojos azules que disfruta correr en la nieve
+imprimirPerro
+actualizarEdadPerro 4 
+imprimirEdadPerro
+actualizarVitalidadPerro 7 
+imprimirVitalidadPerro
+imprimirPerro
+liberarPerro
+Fin

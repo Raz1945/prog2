@@ -1,0 +1,122 @@
+1>2>#  se crean 10 Perros para ingresarlos a la Refugio.
+3>4>5>6>7>8>9>10>11>12>13>14>15>16>17>18>19>20>21>22>23>24>25>26>27>28>29>30>31>32>33>Perro 2
+Nombre: Bobby
+Edad: 9
+Descripcion:  Schnauzer anciano pero sabio que disfruta de la tranquilidad y los paseos cortos
+Fecha de ingreso: 10/4/2015
+Vitalidad: 5
+Perro 9
+Nombre: Canela
+Edad: 9
+Descripcion:  Mestiza dulce y tranquila que disfruta de las siestas al sol
+Fecha de ingreso: 13/9/2015
+Vitalidad: 5
+Perro 8
+Nombre: Maya
+Edad: 4
+Descripcion:  Akita inu independiente pero muy leal
+Fecha de ingreso: 6/1/2020
+Vitalidad: 6
+Perro 4
+Nombre: Chloe
+Edad: 5
+Descripcion:  Pomerania esponjosa que adora ser el centro de atención
+Fecha de ingreso: 27/9/2020
+Vitalidad: 6
+Perro 1
+Nombre: Daisy
+Edad: 5
+Descripcion:  Beagle curiosa y aventurera que siempre sigue su olfato a nuevas experiencias
+Fecha de ingreso: 18/12/2020
+Vitalidad: 9
+Perro 5
+Nombre: Zeus
+Edad: 4
+Descripcion:  Pastor alemán valiente y bien entrenado que trabaja como perro guardián
+Fecha de ingreso: 17/7/2021
+Vitalidad: 8
+Perro 7
+Nombre: Bruno
+Edad: 5
+Descripcion:  Boxer juguetón que nunca se cansa de saltar y hacer travesuras
+Fecha de ingreso: 17/7/2021
+Vitalidad: 9
+Perro 3
+Nombre: Milo
+Edad: 4
+Descripcion:  Dálmata enérgico con un amor por correr y jugar con otros perros
+Fecha de ingreso: 3/8/2021
+Vitalidad: 10
+Perro 10
+Nombre: Otto
+Edad: 3
+Descripcion:  San Bernardo gigante pero bonachón que adora la nieve y los abrazos
+Fecha de ingreso: 11/11/2022
+Vitalidad: 7
+Perro 6
+Nombre: Lola
+Edad: 2
+Descripcion:  Shih tzu consentida que ama estar en brazos y recibir mimos
+Fecha de ingreso: 9/3/2023
+Vitalidad: 7
+34>El perro con id 8 se removió del refugio.
+35>El perro con id 10 se removió del refugio.
+36>El perro con id 4 se removió del refugio.
+37>Perro 2
+Nombre: Bobby
+Edad: 9
+Descripcion:  Schnauzer anciano pero sabio que disfruta de la tranquilidad y los paseos cortos
+Fecha de ingreso: 10/4/2015
+Vitalidad: 5
+Perro 9
+Nombre: Canela
+Edad: 9
+Descripcion:  Mestiza dulce y tranquila que disfruta de las siestas al sol
+Fecha de ingreso: 13/9/2015
+Vitalidad: 5
+Perro 1
+Nombre: Daisy
+Edad: 5
+Descripcion:  Beagle curiosa y aventurera que siempre sigue su olfato a nuevas experiencias
+Fecha de ingreso: 18/12/2020
+Vitalidad: 9
+Perro 5
+Nombre: Zeus
+Edad: 4
+Descripcion:  Pastor alemán valiente y bien entrenado que trabaja como perro guardián
+Fecha de ingreso: 17/7/2021
+Vitalidad: 8
+Perro 7
+Nombre: Bruno
+Edad: 5
+Descripcion:  Boxer juguetón que nunca se cansa de saltar y hacer travesuras
+Fecha de ingreso: 17/7/2021
+Vitalidad: 9
+Perro 3
+Nombre: Milo
+Edad: 4
+Descripcion:  Dálmata enérgico con un amor por correr y jugar con otros perros
+Fecha de ingreso: 3/8/2021
+Vitalidad: 10
+Perro 6
+Nombre: Lola
+Edad: 2
+Descripcion:  Shih tzu consentida que ama estar en brazos y recibir mimos
+Fecha de ingreso: 9/3/2023
+Vitalidad: 7
+38>#  Hay dos Perros fecha.
+39>Perro 5
+Nombre: Zeus
+Edad: 4
+Descripcion:  Pastor alemán valiente y bien entrenado que trabaja como perro guardián
+Fecha de ingreso: 17/7/2021
+Vitalidad: 8
+Perro 7
+Nombre: Bruno
+Edad: 5
+Descripcion:  Boxer juguetón que nunca se cansa de saltar y hacer travesuras
+Fecha de ingreso: 17/7/2021
+Vitalidad: 9
+40>#  No hay Perros fecha.
+41>No se encontraron perros ingresados en la fecha determinada.
+42>43>Fin.

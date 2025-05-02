@@ -1,0 +1,119 @@
+1>2>Lista de adopciones:
+Fin lista de adopciones.
+3>4>5>#  inserta primer elemento.
+6>7>8>9>10>11>Adopcion de persona de CI 12345678 y perro de id 1 agregada de forma exitosa.
+12>Lista de adopciones:
+---------------------------
+Adopcion en fecha 2/1/2025
+Adoptante:
+Persona Mickey Mouse
+CI: 12345678
+Adoptado:
+Perro 1
+Nombre: Pluto
+Fecha de ingreso: 18/8/1930
+---------------------------
+Fin lista de adopciones.
+13>#  inserta al principio.
+14>15>16>17>18>19>Adopcion de persona de CI 23456789 y perro de id 2 agregada de forma exitosa.
+20>Lista de adopciones:
+---------------------------
+Adopcion en fecha 1/1/2025
+Adoptante:
+Persona Shaggy Rogers
+CI: 23456789
+Adoptado:
+Perro 2
+Nombre: Scooby
+Fecha de ingreso: 13/9/1969
+---------------------------
+---------------------------
+Adopcion en fecha 2/1/2025
+Adoptante:
+Persona Mickey Mouse
+CI: 12345678
+Adoptado:
+Perro 1
+Nombre: Pluto
+Fecha de ingreso: 18/8/1930
+---------------------------
+Fin lista de adopciones.
+21>#  inserta al final.
+22>23>24>25>26>27>Adopcion de persona de CI 34567890 y perro de id 3 agregada de forma exitosa.
+28>Lista de adopciones:
+---------------------------
+Adopcion en fecha 1/1/2025
+Adoptante:
+Persona Shaggy Rogers
+CI: 23456789
+Adoptado:
+Perro 2
+Nombre: Scooby
+Fecha de ingreso: 13/9/1969
+---------------------------
+---------------------------
+Adopcion en fecha 2/1/2025
+Adoptante:
+Persona Mickey Mouse
+CI: 12345678
+Adoptado:
+Perro 1
+Nombre: Pluto
+Fecha de ingreso: 18/8/1930
+---------------------------
+---------------------------
+Adopcion en fecha 4/1/2025
+Adoptante:
+Persona Charlie Brown
+CI: 34567890
+Adoptado:
+Perro 3
+Nombre: Snoopy
+Fecha de ingreso: 4/10/1950
+---------------------------
+Fin lista de adopciones.
+29>#  empate de fechas en el medio.
+30>31>32>33>34>35>36>37>38>39>Adopcion de persona de CI 56789012 y perro de id 6 agregada de forma exitosa.
+40>Lista de adopciones:
+---------------------------
+Adopcion en fecha 1/1/2025
+Adoptante:
+Persona Shaggy Rogers
+CI: 23456789
+Adoptado:
+Perro 2
+Nombre: Scooby
+Fecha de ingreso: 13/9/1969
+---------------------------
+---------------------------
+Adopcion en fecha 2/1/2025
+Adoptante:
+Persona Mickey Mouse
+CI: 12345678
+Adoptado:
+Perro 1
+Nombre: Pluto
+Fecha de ingreso: 18/8/1930
+---------------------------
+---------------------------
+Adopcion en fecha 2/1/2025
+Adoptante:
+Persona Jim Dear
+CI: 56789012
+Adoptado:
+Perro 6
+Nombre: Golfo
+Fecha de ingreso: 22/6/1955
+---------------------------
+---------------------------
+Adopcion en fecha 4/1/2025
+Adoptante:
+Persona Charlie Brown
+CI: 34567890
+Adoptado:
+Perro 3
+Nombre: Snoopy
+Fecha de ingreso: 4/10/1950
+---------------------------
+Fin lista de adopciones.
+41>42>Fin.

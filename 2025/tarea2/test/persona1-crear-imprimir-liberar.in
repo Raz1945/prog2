@@ -1,0 +1,38 @@
+crearPersona 12345678 Pedro Alfonso 4 6 2000
+imprimirCIPersona
+imprimirNombreYApellidoPersona
+imprimirPersona
+imprimirFechaNacimientoPersona
+liberarPersona
+
+crearPersona 23429221 Luis Rodriguez 9 2 1998
+imprimirCIPersona
+imprimirNombreYApellidoPersona
+imprimirPersona
+imprimirFechaNacimientoPersona
+liberarPersona
+
+crearPersona 98766543 Mateo Perez 29 9 1977
+imprimirCIPersona
+imprimirNombreYApellidoPersona
+imprimirPersona
+imprimirFechaNacimientoPersona
+liberarPersona
+
+crearPersona 23429221 Jose Riquelme 6 11 1986
+imprimirCIPersona
+imprimirNombreYApellidoPersona
+imprimirPersona
+imprimirFechaNacimientoPersona
+liberarPersona
+
+crearPersona 55549321 Leopoldo Suarez 23 1 2002
+imprimirCIPersona
+imprimirNombreYApellidoPersona
+imprimirPersona
+imprimirFechaNacimientoPersona
+liberarPersona
+
+crearPersona 44199264 Mirian Lopez 14 7 1980
+liberarPersona
+Fin
